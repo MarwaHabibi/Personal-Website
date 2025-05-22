@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+    }
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    nav {
+      background-color: #1e2e54;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav a {
+      color: #e1e5f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(38, 70, 145, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 28px rgba(38, 70, 145, 0.25);
+    }
+    .gallery-item img, 
+    .gallery-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .caption {
+      padding: 12px 15px;
+      font-size: 1rem;
+      color: #1a3a7a;
+      font-family: 'Merriweather', serif;
+      text-align: center;
+    }
+    footer {
+      background-color: #1e2e54;
+      color: #e1e5f2;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+    @media(max-width: 500px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Gallery</h1>
+    <p>Moments and memories from Marwa Habibi’s journey</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="faq.html">Q&A</a>
+  </nav>
+  <main>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="Screenshot (557).png" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+        <img src="Screenshot (555).png" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (556).png" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Marwa.jpg" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (558).png" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (568).png" alt="Recommendation Letter"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (561).png" alt="Membership"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Marwa Habibi.png" alt="Membership"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (562).png" alt="Membership"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (548).png" alt="Certifacate"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (564).png" alt="Certifacate"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (554).png" alt="Certifacate"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (565).png" alt="Certifacate"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (566).png" alt="Certifacate"/>
+      </div>
+      <div class="gallery-item">
+          <img src="Screenshot (563).png" alt="Certifacate"/>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>

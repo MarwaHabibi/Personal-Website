@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    nav {
+      background-color: #1e2e54;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 14px 20px;
+    }
+    nav a {
+      color: #e1e5f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #0b3d91;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    details {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      box-shadow: 0 3px 7px rgba(11, 61, 145, 0.1);
+      cursor: pointer;
+    }
+    details[open] {
+      background: #eaf1fb;
+      box-shadow: 0 5px 15px rgba(11, 61, 145, 0.2);
+    }
+    summary {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #0b3d91;
+      outline: none;
+      list-style: none;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary::before {
+      content: "▶";
+      font-size: 1rem;
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+      color: #0b3d91;
+    }
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details p {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+    footer {
+      background-color: #1e2e54;
+      color: #e1e5f2;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Frequently Asked Questions</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="faq.html">Q&A</a>
+  </nav>
+<div class="container">
+  <h2>Common Questions</h2>
+
+  <details>
+    <summary>How can I contact Marwa Habibi?</summary>
+    <p>You can contact me via the Contact page on this website or by sending an email to <a href="mailto:marwahabibi789@gmail.com">marwahabibi789@gmail.com</a>.</p>
+  </details>
+
+  <details>
+    <summary>What topics does Marwa write about?</summary>
+    <p>My writing focuses primarily on education, women's rights, peacebuilding, and social issues in Afghanistan, along with personal stories and literary works.</p>
+  </details>
+
+  <details>
+    <summary>Can I contribute guest posts to the blog?</summary>
+    <p>Currently, I do not accept guest posts. However, you are welcome to reach out if you have ideas or collaboration proposals.</p>
+  </details>
+
+  <details>
+    <summary>Are the blog posts available in other languages?</summary>
+    <p>Most posts are in English, but I am working on providing some content in Persian (Farsi) and other languages in the future.</p>
+  </details>
+
+  <details>
+    <summary>Where can I find Marwa’s published books or articles?</summary>
+    <p>Links to published works will be available in the Article section or through direct announcements on the blog.</p>
+  </details>
+
+</div>
+
+<footer style="background:#1e2e54; color:#e1e5f2; text-align:center; padding:20px;">
+  &copy; 2025 Marwa Habibi. All rights reserved.
+</footer>
+
+</body>
+</html>

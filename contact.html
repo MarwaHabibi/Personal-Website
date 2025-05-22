@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Marwa Habibi</title>
+  <script src="Java.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+    /* Your existing styles here... */
+    body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background-color: #1a3a7a;
+  color: #f5f5f5;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+nav {
+  background-color: #1e2e54;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+nav a {
+  color: #e1e5f2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #ffd700;
+}
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+main {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(38,70,145,0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1a3a7a;
+}
+input, textarea {
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+}
+button {
+  background-color: #1a3a7a;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+}
+button:hover {
+  background-color: #274d9b;
+}
+.contact-info {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #444;
+}
+.contact-info strong {
+  color: #1a3a7a;
+}
+footer {
+  background-color: #1e2e54;
+  color: #e1e5f2;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 0.95rem;
+  margin-top: 60px;
+}
+@media(max-width: 500px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+    /* Add this to hide elements with class "hidden" */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Me</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="faq.html">Q&A</a>
+  </nav>
+
+  <main>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <!-- Use mailto: for email -->
+      <a href="mailto:marwahabibi789@gmail.com" title="Email">
+        <img src="icons8-email-24.png" alt="Email" width="34" />
+      </a>
+      <a href="https://www.linkedin.com/in/marwa-habibi-95940434b" target="_blank" title="LinkedIn">
+        <img src="icons8-linkedin-48.png" alt="LinkedIn" width="35" />
+      </a>
+      <a href="https://www.instagram.com/safahabibi111?igsh=ZXZseDJueDBuYXNw" target="_blank" title="Instagram">
+        <img src="icons8-instagram-48.png" alt="Instagram" width="35" />
+      </a>
+      <a href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" target="_blank" title="Medium">
+        <img src="icons8-medium-30.png" alt="Medium" width="35" />
+      </a>
+      <a href="https://github.com/MarwaHabibi" target="_blank" title="GitHub">
+        <img src="icons8-github-30.png" alt="GitHub" width="35" />
+      </a>
+      <a href="https://x.com/MarwaHabib48820" target="_blank" title="Twitter">
+        <img src="icons8-twitter-30.png" alt="Twitter" width="35" />
+      </a>
+    </div>
+
+    <h2 id="order-title" style="text-align:center; color:#1a3a7a;">Contact Form</h2>
+
+    <div id="order-form-container">
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="thank-you-message" class="hidden" style="text-align:center; color:#1a3a7a; font-size: 35px; font-weight:bold;">
+      Thank you for your message! I will read soon.
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact-form');
+      const thankYou = document.getElementById('thank-you-message');
+      const orderFormContainer = document.getElementById('order-form-container');
+      const orderTitle = document.getElementById('order-title');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // prevent actual submission
+
+        // Hide the form and title
+        orderFormContainer.style.display = 'none';
+        orderTitle.style.display = 'none';
+
+        // Show thank you message
+        thankYou.classList.remove('hidden');
+
+        // Reset the form (optional here since form is hidden)
+        form.reset();
+      });
+    });
+  </script>
+
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>

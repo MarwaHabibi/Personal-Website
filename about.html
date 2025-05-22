@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+    .container a.btn-primary {
+    padding: 14px 40px;
+    background: #ff6f61;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+    nav {
+      background-color: #1e2e54;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav a {
+      color: #e1e5f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .profile-section {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .profile-section img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(11, 61, 145, 0.3);
+    }
+    .bio {
+      flex: 1;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #444;
+    }
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      color: #0b3d91;
+      border-bottom: 3px solid #ffd700;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .resume {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+    }
+    .resume h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1e2e54;
+      border-left: 5px solid #0b3d91;
+      padding-left: 15px;
+    }
+    .resume-section {
+      margin-bottom: 40px;
+    }
+    .resume-item {
+      margin-bottom: 20px;
+    }
+    .resume-item h4 {
+      font-size: 1.3rem;
+      color: #0b3d91;
+      margin-bottom: 5px;
+    }
+    .resume-item span {
+      font-weight: 700;
+      color: #444;
+    }
+    .resume-item p {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 6px;
+    }
+    ul.skills-list {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    ul.skills-list li {
+      background-color: #0b3d91;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #1e2e54;
+      color: #e1e5f2;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+    @media(max-width: 768px) {
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-section img {
+        margin-bottom: 20px;
+      }
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Marwa Habibi</h1>
+    <p>Writer | Researcher | Human Rights Activist | Future Diplomat</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="faq.html">Q&A</a>
+  </nav>
+  <div class="container">
+    <section class="profile-section" id="about-bio">
+      <img src="download.jpeg" alt="Marwa Habibi Photo" />
+      <div class="bio">
+        <h2 class="section-title">About Me</h2>
+        <p>In the heart of Afghanistan's history filled with crises and complexities, in a distant and forgotten city called Mazar-i-Sharif, I was born in a land where war and poverty loomed like a dark shadow over its people. In this land, dreams can hardly become reality, but from a young age I had learned that no force could divert me from my path. My home was in a street filled with dust and endless hustle, where the sounds of life could be heard. I remember those days when my mother and father always listened to my words with endless care and attention, even when their hearts were filled with endless worries. Our home was filled with love and warmth, but just as my family’s embrace was a refuge for me, outside of it was a world full of threat and crisis that was rapidly growing in the shadow of darkness.</p><br>
+        <a href="https://medium.com/@marwahabibi789/about-me-b8216084be5f" class="btn-primary">Read More</a>
+      </div>
+    </section>
+
+    <section class="resume" id="resume-education">
+      <h3>Education</h3>
+      <div class="resume-item">
+        <h4>Lisah Sheikh Mohammad Sadiq Shahab School</h4>
+        <span>High School Diploma (Expected)</span>
+        <p>Focusing on literature, research, and social sciences with distinction in language studies.</p>
+      </div>
+      <div class="resume-item">
+        <h4>Online Courses & Certifications</h4>
+        <span>Various International Programs (2023-2025)</span>
+        <p>Completed leadership, peacebuilding, research methodology, and public speaking courses.</p>
+      </div>
+    </section>
+
+    <section class="resume" id="resume-experience">
+      <h3>Experience & Volunteer Work</h3>
+      <div class="resume-item">
+        <h4>Member, Global Peacebuilding Network</h4>
+        <span>2024</span>
+        <p>Active contributor to peacebuilding projects, promoting dialogue and conflict resolution across youth communities.</p>
+      </div>
+      <div class="resume-item">
+        <h4>Project Parwaaz - Leadership Program for Afghan Women</h4>
+        <span>2025 - Present</span>
+        <p>United Leaders Global in Partnership with International Council on Human Rights, Peace and Politics</p>
+      </div>
+    </section>
+
+    <section class="resume" id="resume-skills">
+      <h3>Skills</h3>
+      <ul class="skills-list">
+    <li>Social Entrepreneurship & Advocacy</li>
+    <li>Effective Communication & Public Speaking</li>
+    <li>Multilingual Communication (Dari, English)</li>
+    <li>Professional & Ethical Responsibility</li>
+    <li>Digital Literacy & Proficiency (Microsoft Office, Google Workspace, Collaboration Tools)</li>
+    <li>Peacebuilding & Conflict Resolution</li>
+    <li>Project Management & Strategic Planning</li>
+     <li>Research & Data Analysis (Primary & Secondary Research)</li>
+     <li>Leadership & Team Building</li>
+     <li>Creative Writing & Poetry</li>
+     <li>Full Stack Development (Training)</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+</body>
+</html>

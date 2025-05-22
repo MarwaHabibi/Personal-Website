@@ -1,0 +1,539 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marwa Habibi - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+<style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+
+  /* --- Header --- */
+  header {
+    position: relative;
+    height: 100vh;
+     background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.55);
+  }
+
+  header .content {
+    position: relative;
+    max-width: 900px;
+    padding: 0 20px;
+    z-index: 2;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 1.2px;
+  }
+
+  header a.btn-primary {
+    padding: 14px 40px;
+    background: #ff6f61;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  @keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+  }
+
+  /* --- Sections --- */
+  section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+  }
+
+  section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #ff6f61;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  /* --- Intro Section --- */
+  #intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  #intro img {
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  #intro img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+  #intro .text {
+    max-width: 600px;
+  }
+
+  #intro .text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  /* --- Features Section --- */
+  #features {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .feature:hover {
+    transform: translateY(-10px);
+  }
+
+  .feature h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #555;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* --- Projects Section --- */
+  /* بخش کلی پروژه‌ها */
+#projects {
+  padding: 4rem 1rem;
+  background-color: #ff6f61;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: #1a1a1a;
+}
+
+/* ساختار شبکه‌ای */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* کارت هر پروژه */
+.project-card {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #666666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.project-card a {
+  color: #ec6707;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+  /* --- Testimonials --- */
+  #testimonials {
+    background: #ff6f61;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+  }
+
+  #testimonials h2 {
+    color: white;
+    font-size: 2.1rem;
+  }
+
+  .testimonial {
+    max-width: 800px;
+    margin: 30px auto;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .testimonial::before {
+    content: "“";
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .testimonial cite {
+    display: block;
+    margin-top: 20px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: right;
+  }
+
+  /* --- Contact Quick --- */
+  #contact-quick {
+    margin-top: 50px;
+    background: white;
+    padding: 50px 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  #contact-quick h2 {
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+  }
+
+  #contact-quick .btn-contact {
+    background: #ff6f61;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+   transition: background-color 0.3s ease;
+  }
+
+  #contact-quick .btn-contact:hover {
+    background-color: #e55b4e;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background: #ff6f61;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    #intro img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo">Marwa Habibi</div>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- Header -->
+<header>
+  <div class="content">
+    <h1>Welcome to Marwa Habibi's World</h1>
+    <p>Passionate writer, researcher, Backend and Frontend Developer, and aspiring leader from Afghanistan</p>
+    <a href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary">Learn More About Me</a>
+  </div>
+</header>
+<!-- Intro Section -->
+<section id="intro">
+  <img src="download.jpeg" alt="Marwa Habibi Portrait" />
+  <div class="text">
+    <h2>Who Am I?</h2>
+    <p>I am a passionate young Afghan leader, writer, and researcher dedicated to advancing education, gender equality, and human rights. Currently, I am training as a Full Stack Developer, honing my skills in both frontend and backend web development. Alongside programming, I possess strong capabilities in leadership, project management, and digital tools.
+    Fluent in multiple languages, I focus on social entrepreneurship, peacebuilding, and girls’ education. Through my writing, research, and advocacy, I strive to create positive social impact and contribute to global development. I am eager to collaborate on opportunities that support personal and professional growth and drive meaningful change.</p>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+  <div class="feature">
+    <h3>Creative Writing & Poetry</h3>
+    <p>Crafting emotional and compelling stories to raise awareness and inspire change.</p>
+  </div>
+  <div class="feature">
+    <h3>Full Stack Development (Training)</h3>
+    <p>Experienced in building full-stack web applications with responsive frontend design and robust backend functionality. Skilled in HTML, CSS, JavaScript, React, Python, and Node.js.</p>
+  </div>
+  <div class="feature">
+    <h3>Leadership & Team Building</h3>
+    <p>Engaging in international programs to develop leadership skills for global impact.</p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <h2>Experiences and Activities</h2>
+  <div class="project-card">
+    <img src="Poetry Class 1.png" width="350" alt="Project 1" />
+    <div class="content">
+      <h4>Poetry competition for 2025</h4>
+      <p>I participated in the poetry competition 'Everyday Power and Resistance' specially for Afghan women; a competition with a theme of poetry in English that was held alongside the Amplify Afghan Women workshop, providing an opportunity to publish works and win prizes.</p>
+      <a href="https://sites.google.com/view/amplifyafghans/poetry-competition-2025">Read More</a>
+    </div>
+  </div><br>
+  <div class="project-card">
+    <img src="1740308732424.jpeg" width="500" alt="Project 2"/>
+    <div class="content">
+      <h4>Sustainers</h4>
+      <p>Completing campaign the online Training ‘ Cost & Benefits of Residential Solar Energy’</p>
+      <a href="https://www.linkedin.com/company/sustainers-afg/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BiySgFTJATwKZwjGTmMgTLA%3D%3D">Read More</a>
+    </div>
+  </div><br>
+  <div class="project-card">
+    <img src="Marwa Habibi.png" width="380" alt="Project 3"/>
+    <div class="content">
+      <h4>Women Ascension network</h4>
+      <p>I am proud to have joined the Women Ascension network and received my membership certificate. This membership provides a valuable opportunity to participate in future programs and activities of this international platform.</p>
+      <a href="https://www.linkedin.com/company/76898534/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_interests_details%3BS%2BG%2F0V71Tpe92R6lvN2Myg%3D%3D">Read More</a>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <h2>What People Say</h2>
+  <blockquote class="testimonial">
+    "Marwa is clearly destined to do amazing things and you would be very lucky to have her on your team."
+    <cite>— Isabelle Zhu-Maguire, Co-founder, AMPLIFY Afghan Women, Australian National University</cite>
+  </blockquote>
+  <blockquote class="testimonial">
+    "She is the kind of student who does not merely seek success for herself, but aims to be a voice and force for change in her community."
+    <cite>— Aryana Mahmood, PhD Candidate in International Relations, Australian National University (ANU)</cite>
+  </blockquote>
+  <blockquote class="testimonial">
+    "Marwa is a natural leader with a problem-solving mindset, a proactive approach, and a deep commitment to social and environmental challenges."
+    <cite>— Rohina Ghafori, Founder & CEO of Sustainers Global Initiative</cite>
+  </blockquote>
+</section>
+
+<!-- Contact Quick Section -->
+<section id="contact-quick">
+  <h2>Get In Touch</h2>
+  <p>If you'd like to connect or collaborate, feel free to reach out.</p><br>
+  <a href="https://marwahabibi789@gmail.com" target="_blank" title="Email">
+    <img src="icons8-email-24.png" alt="Email" width="34">
+  </a>
+  <a href="https://www.linkedin.com/in/marwa-habibi-95940434b" target="_blank" title="linkedin">
+    <img src="icons8-linkedin-48.png" alt="linkedin" width="35">
+  </a>
+  <a href="https://www.instagram.com/safahabibi111?igsh=ZXZseDJueDBuYXNw" target="_blank" title="Instagram">
+    <img src="icons8-instagram-48.png" alt="Instagram" width="35">
+  </a>
+  <a href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" target="_blank" title="Medium">
+    <img src="icons8-medium-30.png" alt="Medium" width="35">
+  </a>
+  <a href="https://github.com/MarwaHabibi" target="_blank" title="GitHub">
+    <img src="icons8-github-30.png" alt="GitHub" width="35">
+  </a>
+  <a href="https://x.com/MarwaHabib48820" target="_blank" title="Twitter">
+    <img src="icons8-twitter-30.png" alt="Twitter" width="35">
+  </a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Marwa Habibi. All rights reserved.</p>
+  <p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="faq.html">FAQ</a> |
+    <a href="contact.html">Contact</a>
+  </p>
+</footer>
+
+</body>
+</html>

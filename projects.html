@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+    }
+    header {
+      background-color: #0b3d91;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    nav {
+      background-color: #1e2e54;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav a {
+      color: #e1e5f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #0b3d91;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(11, 61, 145, 0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+    .project-description {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .project-link {
+      margin-top: auto;
+      text-align: right;
+    }
+    .project-link a {
+      color: #0b3d91;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .project-link a:hover {
+      border-color: #ffd700;
+    }
+    footer {
+      background-color: #1e2e54;
+      color: #e1e5f2;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Projects</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html">Blog</a>
+    <a href="resume.html">Resume</a>
+    <a href="faq.html">Q&A</a>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <img class="project-image" src="download (1).jpeg" alt="Exploring Hidden Wonders"/>
+        <div class="project-content">
+          <h3 class="project-title">Exploring Hidden Wonders</h3>
+          <p class="project-description">Top 5 Must-Visit Historical Sites</p>
+          <div class="project-link">
+            <a href="https://marwahabibi.github.io/Exploring-Hidden-Wonders/">Learn More &raquo;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img class="project-image" src="Afghan.jpeg" alt="Afghan Heritage Store"/>
+        <div class="project-content">
+          <h3 class="project-title">Afghan Heritage Store</h3>
+          <p class="project-description">Traditional Clothing & Foods</p>
+          <div class="project-link">
+            <a href="https://marwahabibi.github.io/Afghan-Heritage-Store/">Learn More &raquo;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img class="project-image" src="Explore the wonders of the world like never before with this 2025 travel guide.jpeg" alt="My Beautiful World"/>
+        <div class="project-content">
+          <h3 class="project-title">My Beautiful Worlds</h3>
+          <p class="project-description">Explore the things I love, the places I want to visit, and the passions that drive me. This is where I share everything that inspires me!</p>
+          <div class="project-link">
+            <a href="https://marwahabibi.github.io/World/">Learn More &raquo;</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>
