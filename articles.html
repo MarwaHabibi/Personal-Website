@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Articles - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .article-item {
+      background: #fff;
+      margin-bottom: 25px;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(38, 70, 145, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .article-item:hover {
+      box-shadow: 0 8px 28px rgba(38, 70, 145, 0.25);
+    }
+    .article-item h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #73946B;
+    }
+    .article-item p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .article-item a.read-more {
+      font-weight: 700;
+      color: #97866A;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    .article-item a.read-more:hover {
+      color: #6F826A;
+    }
+/* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    #intro img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+    /* On small screens */
+    @media (max-width: 768px) {
+    nav ul {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    background: #B2CD9C;
+    position: absolute;
+    top: 60px; /* below nav bar */
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  nav ul.show {
+    display: flex; /* Show menu when toggled */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Articles</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="articles.html" class="active">Articles</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav><br><br>
+  <main class="container">
+    <ul class="article-list">
+      <li class="article-item">
+        <h2>Challenges and Hope: Girls' Education in Afghanistan</h2>
+        <p>In the heart of Afghanistan, where the mountains echo stories of resilience and struggle, the battle for girls’ education continues to unfold. For decades, Afghan girls have faced systemic barriers to accessing quality education — yet, despite the darkness, their hope continues to shine like a lantern in the storm.</p>
+        <a href="https://medium.com/@marwahabibi789/challenges-and-hope-girls-education-in-afghanistan-b58fe31b9102" class="read-more">Read More &raquo;</a>
+      </li>
+      <li class="article-item">
+        <h2>Peacebuilding Initiatives: Youth Leading Change</h2>
+        <p>In a country long shaped by conflict and instability, a new generation of Afghans is rising with a vision of peace. Amid shattered systems and silenced voices, Afghan youth are stepping into the arena — not as victims, but as agents of change. Their commitment to peacebuilding is rewriting narratives and planting the seeds of hope for a future free from violence.</p>
+        <a href="https://marwa1234.substack.com/p/peacebuilding-initiatives-youth-leading?r=5qjhsq" class="read-more">Read More &raquo;</a>
+      </li>
+      <li class="article-item">
+        <h2>The Power of Multilingualism in Empowering Afghan Youth</h2>
+        <p>In the heart of a nation marked by conflict and cultural richness, a silent revolution is unfolding — one driven not by weapons or politics, but by words. For many Afghan youth, learning multiple languages has become a lifeline to the world, a tool for empowerment, and a catalyst for change.</p>
+        <a href="https://open.substack.com/pub/marwa1234/p/the-power-of-multilingualism-in-empowering?r=5qjhsq&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" class="read-more">Read More &raquo;</a>
+      </li>
+      <li class="article-item">
+        <h2>Women’s Rights and Social Change: A 2025 Perspective</h2>
+        <p>Afghanistan’s journey toward women’s rights has been a tumultuous one, shaped by decades of conflict, cultural shifts, and political upheavals. As we step into 2025, the landscape is more complex than ever — yet the determination for change among Afghan women and allies remains strong and unwavering.</p>
+        <a href="https://open.substack.com/pub/marwa1234/p/womens-rights-and-social-change-a?r=5qjhsq&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" class="read-more">Read More &raquo;</a>
+      </li>
+    </ul>
+  </main>
+    <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>
