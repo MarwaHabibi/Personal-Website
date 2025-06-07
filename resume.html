@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume - Marwa Habibi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap');
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+     .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      padding: 0%;
+      margin: 0%;
+      color: #73946B;
+      text-align: center;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+/* فقط روی این قسمت اثر داره */
+  .container {
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: #2e523c;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 40px;
+  }
+
+  /* زیرخط متحرک */
+  .section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    border-radius: 3px;
+    animation: underlineExpand 1s forwards ease-out;
+  }
+  @keyframes underlineExpand {
+    to {
+      width: 60%;
+    }
+  }
+  main {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  background-color: #a5d6a7;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(38, 70, 145, 0.25);
+  padding: 60px 30px; /* بیشتر از قبل برای جلوگیری از 'خوردن' */
+  font-family: 'Merriweather', serif;
+  color: #2f4f3f;
+  transition: background-color 0.3s ease;
+  height: 280px; /* کافی برای سه لینک */
+}
+
+main:hover {
+  background-color: #8fb97a;
+}
+
+a.styled-link {
+  position: absolute;
+  background: linear-gradient(135deg, #388e3c, #81c784);
+  color: white !important;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 35px;
+  text-decoration: none !important;
+  font-size: 1.05rem;
+  box-shadow: 0 6px 12px rgba(56, 142, 60, 0.4);
+  transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+a.styled-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+a.styled-link:hover,
+a.styled-link:focus {
+  background: linear-gradient(135deg, #66bb6a, #a5d6a7);
+  box-shadow: 0 12px 20px rgba(102, 187, 106, 0.6);
+  transform: translateY(-6px);
+}
+
+a.styled-link:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+a.btn-primary {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+/* موقعیت دقیق لینک‌ها */
+.link-top-left {
+  top: 24px;
+  left: 30px;
+}
+
+.link-top-right {
+  top: 24px;
+  right: 30px;
+}
+
+.link-bottom-center {
+  bottom: 30px;
+  left: 32%;
+  right: auto;
+}
+  /* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Resume</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container"><br><br>
+  <h2 class="section-title">Researcher, Writer, and Peacebuilding Advocate</h2>
+</div>
+
+<main>
+  <a href="White Cream And Beige Geometric Minimalist Graphic Designer Resume.pdf.pdf.pdf" target="_blank" class="styled-link link-top-left">
+    View Resume (PDF)
+  </a>
+
+  <a href="Motivation of Marwa Habibi.pdf" target="_blank" class="styled-link btn-primary link-top-right">
+    View Motivation Letter (PDF)
+  </a>
+
+  <a href="Marwa_Habibi_Cover_Letter.pdf" target="_blank" class="styled-link link-bottom-center">
+    View Cover Letter (PDF)
+  </a>
+</main>
+
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+  function adjustLinksForMobile() {
+  const main = document.querySelector('main');
+  const links = document.querySelectorAll('a.styled-link');
+
+  if (window.innerWidth <= 600) {
+    main.style.display = 'flex';
+    main.style.flexDirection = 'column';
+    main.style.alignItems = 'center';
+    main.style.height = 'auto';
+    main.style.padding = '20px 15px';
+
+    links.forEach(link => {
+      link.style.position = 'static';
+      link.style.width = '80%';
+      link.style.maxWidth = '300px';
+      link.style.marginBottom = '10px';
+      link.style.transform = 'none';
+      link.style.textAlign = 'center';
+      link.classList.add('no-hover-effect'); // اضافه کردن کلاس غیرفعال کننده انیمیشن
+    });
+  } else {
+    main.style.display = 'block';
+    main.style.height = '280px';
+    main.style.padding = '60px 30px';
+
+    links.forEach(link => {
+      link.style.position = 'absolute';
+      link.style.width = '';
+      link.style.maxWidth = '';
+      link.style.marginBottom = '';
+      link.style.transform = '';
+      link.style.textAlign = '';
+      link.classList.remove('no-hover-effect'); // حذف کلاس
+    });
+  }
+}
+
+window.addEventListener('load', adjustLinksForMobile);
+window.addEventListener('resize', adjustLinksForMobile);
+
+</script>
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>
