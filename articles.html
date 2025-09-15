@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Articles - Marwa Habibi</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffffdd;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+    }
+
+    .article-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .article-item {
+      background: linear-gradient(135deg, #B2CD9C, #6F826A);
+      color: white;
+      margin-bottom: 28px;
+      padding: 24px 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(115, 148, 107, 0.3);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      animation-fill-mode: forwards;
+      animation-duration: 0.7s;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .article-item:nth-child(1) {
+      animation-name: slideUpFade;
+      animation-delay: 0.2s;
+    }
+    .article-item:nth-child(2) {
+      animation-name: slideUpFade;
+      animation-delay: 0.4s;
+    }
+    .article-item:nth-child(3) {
+      animation-name: slideUpFade;
+      animation-delay: 0.6s;
+    }
+    .article-item:nth-child(4) {
+      animation-name: slideUpFade;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes slideUpFade {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .article-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 16px 40px rgba(115, 148, 107, 0.6);
+      background: linear-gradient(135deg, #B2CD9C, #879f66);
+    }
+
+    .article-item h2 {
+      font-size: 1.9rem;
+      margin-bottom: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .article-item p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .read-more {
+      font-weight: 700;
+      color: #173400;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border: 2px solid #8d8f7b;
+      border-radius: 8px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+      background-color: white;
+    }
+
+    .read-more:hover {
+      background-color: #879f66;
+      color: #ffffff;
+    }
+
+    .read-more::after {
+      content: " »";
+      font-weight: 900;
+    }
+
+    @media (max-width: 600px) {
+      .article-item {
+        padding: 20px 22px;
+      }
+      .article-item h2 {
+        font-size: 1.5rem;
+      }
+    }
+/* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Articles</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="articles.html" class="active">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav><br><br>
+<main class="container">
+    <ul class="article-list">
+      <li class="article-item" tabindex="0" role="article" aria-label="Challenges and Hope: Girls' Education in Afghanistan">
+        <h2>Challenges and Hope: Girls' Education in Afghanistan</h2>
+        <p>In the heart of Afghanistan, where the mountains tell tales of resistance and struggle, the fight for girls' education continues. Despite many obstacles, their hope shines like a beacon in the darkness.</p>
+        <a href="https://medium.com/@marwahabibi789/challenges-and-hope-girls-education-in-afghanistan-b58fe31b9102" class="read-more" target="_blank">Read More</a>
+      </li>
+      <li class="article-item" tabindex="0" role="article" aria-label="Peacebuilding Initiatives: Youth Leading Change">
+        <h2>Peacebuilding Initiatives: Youth Leading Change</h2>
+        <p>In a country shaped by years of war and instability, a new generation of Afghans has emerged with a fresh vision for peace. They are not victims but agents of change.</p>
+        <a href="https://marwa1234.substack.com/p/peacebuilding-initiatives-youth-leading?r=5qjhsq" class="read-more" target="_blank">Read More</a>
+      </li>
+      <li class="article-item" tabindex="0" role="article" aria-label="The Power of Multilingualism in Empowering Afghan Youth">
+        <h2>The Power of Multilingualism in Empowering Afghan Youth</h2>
+        <p>In a country full of tension and culture, a silent revolution is taking place; a revolution built with words, languages, and communication, paving the way to power and change.</p>
+        <a href="https://open.substack.com/pub/marwa1234/p/the-power-of-multilingualism-in-empowering?r=5qjhsq&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" class="read-more" target="_blank">Read More</a>
+      </li>
+      <li class="article-item" tabindex="0" role="article" aria-label="Women’s Rights and Social Change: A 2025 Perspective">
+        <h2>Women’s Rights and Social Change: A 2025 Perspective</h2>
+        <p>The path of women's rights in Afghanistan has been full of twists and turns; yet the determination of Afghan women and their allies for change remains strong and steadfast.</p>
+        <a href="https://open.substack.com/pub/marwa1234/p/womens-rights-and-social-change-a?r=5qjhsq&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false" class="read-more" target="_blank">Read More</a>
+      </li>
+    </ul>
+  </main>
+
+    <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+  // Animate articles on scroll into view with a staggered effect
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const articles = document.querySelectorAll('.article-item');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const revealArticle = (entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 150); // stagger animation by 150ms per item
+        }
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Array.from(articles).indexOf(entry.target);
+            revealArticle(entry, index);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      articles.forEach(article => {
+        observer.observe(article);
+      });
+    });
+     window.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.article-item');
+      items.forEach(item => {
+        item.style.animationPlayState = 'running';
+      });
+    });
+</script>
+<br><br>
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>

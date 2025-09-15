@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - Marwa Habibi</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+.header {
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.header .content h1 {
+  font-size: 3rem;
+  animation: fadeSlideDown 1s ease forwards;
+}
+
+.header .content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: fadeSlideDown 1s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.header .content a.btn-primary {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: #6F826A;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #8A784E;
+  animation: pulseGlow 2s ease-in-out infinite;
+  transition: background-color 0.3s ease;
+}
+
+.header .content a.btn-primary:hover {
+  background-color: #B6B09F;
+  box-shadow: 0 0 20px #8A784E;
+}
+
+/* Keyframes */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #8A784E;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px #8A784E;
+    transform: scale(1.05);
+  }
+}
+
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #73946B;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    details {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 7px rgba(11, 61, 145, 0.1);
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+details[open] {
+  background: #eaf1fb;
+  box-shadow: 0 5px 15px rgba(11, 61, 145, 0.2);
+}
+
+summary {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #6F826A;
+  outline: none;
+  list-style: none;
+  user-select: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▶";
+  font-size: 1rem;
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  color: #B2CD9C;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details p {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+     /* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo">Marwa Habibi</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html" class="active">Q&A</a></li>
+    </ul>
+  </div>
+</nav><br><br>
+<div class="container">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>✨ Can you tell us about your early education?</summary>
+    <p>I studied up to grade 8 in my hometown, but due to the political changes in Afghanistan, I was unable to continue formal schooling. Despite the challenges, I remained committed to learning through online courses and self-study.</p>
+  </details>
+
+  <details>
+    <summary>🌱 How did you stay motivated during difficult times?</summary>
+    <p>Even in the face of obstacles, I focused on my dreams and sought opportunities to learn, create, and contribute to my community. Passion and resilience have always guided me.</p>
+  </details>
+
+  <details>
+    <summary>✍️ When did you discover your love for writing?</summary>
+    <p>I started expressing myself through poetry and storytelling at a young age. Writing became a way to process experiences and share the voices of Afghan girls and women.</p>
+  </details>
+
+  <details>
+    <summary>🌍 How have your experiences shaped your worldview?</summary>
+    <p>Living through challenging circumstances has taught me empathy, the importance of education, and the power of community. These experiences inspire me to work for social change.</p>
+  </details>
+
+  <details>
+    <summary>🚀 What inspires you to pursue technology and programming?</summary>
+    <p>I see technology as a tool to solve real-world problems and empower communities, especially through education and digital inclusion.</p>
+  </details>
+
+  <details>
+    <summary>🎤 How did you develop your public speaking skills?</summary>
+    <p>Through volunteering, participating in international forums, and presenting at workshops, I learned to communicate confidently and inspire audiences with my message.</p>
+  </details>
+
+  <details>
+    <summary>💡 How do you balance creativity with technical work?</summary>
+    <p>I integrate storytelling, writing, and design thinking into my projects, ensuring that my technical solutions are both functional and meaningful.</p>
+  </details>
+
+  <details>
+    <summary>🕊 How have you contributed to social causes or community projects?</summary>
+    <p>I volunteer with organizations that promote human rights, girls’ education, and peacebuilding, aiming to amplify voices that are often unheard.</p>
+  </details>
+
+  <details>
+    <summary>🌐 What role does multilingualism play in your life?</summary>
+    <p>Being fluent in Persian (Dari) and English allows me to connect with people from diverse backgrounds and participate in international discussions.</p>
+  </details>
+
+  <details>
+    <summary>🌟 What is your ultimate goal or vision?</summary>
+    <p>I aspire to use my skills, creativity, and experiences to empower Afghan women, contribute to global education initiatives, and create meaningful change in my community and beyond.</p>
+  </details>
+</div>
+ <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+   // زمان باز ماندن هر سوال 2 ثانیه (2000 میلی ثانیه)
+  const openDuration = 2000;
+
+  const detailsElements = document.querySelectorAll('details');
+
+  let currentIndex = 0;
+
+  function cycleDetails() {
+    detailsElements.forEach(detail => detail.removeAttribute('open'));
+
+    detailsElements[currentIndex].setAttribute('open', '');
+
+    currentIndex = (currentIndex + 1) % detailsElements.length;
+
+    setTimeout(cycleDetails, openDuration);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    cycleDetails();
+  });
+</script>
+<footer>
+  &copy; 2025 Marwa Habibi. All rights reserved.
+</footer>
+</body>
+</html>

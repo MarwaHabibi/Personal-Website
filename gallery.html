@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="fa">
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - Marwa Habibi</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #73946B;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+  .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    h3.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      padding: 0%;
+      gap: 0%;
+      margin: 0%;
+      color: #73946B;
+      text-align: center;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+     
+ .cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-container {
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin: 10px;
+  flex: 1 1 calc(33.333% - 40px); /* دسکتاپ: 3 کارت در هر ردیف */
+  max-width: 320px;
+  height: 350px; /* ارتفاع ثابت و متعادل */
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex: 1 1 calc(50% - 30px); /* موبایل: 2 کارت در هر ردیف */
+    max-width: none;
+    height: 320px; /* کمی کوتاه‌تر */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    flex: 1 1 100%; /* موبایل خیلی کوچک: 1 کارت در هر ردیف */
+    height: 300px;
+  }
+}
+
+/* بقیه استایل‌ها مثل قبل */
+.card-container:hover {
+  transform: scale(1.03);
+}
+
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card-container.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تصویر را بدون تغییر نسبت پر می‌کند */
+}
+
+.card-front img:hover {
+  transform: scale(1.05);
+}
+
+.card-back {
+  background: #fff;
+  color: #73946B;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card-container.landscape {
+  height: 220px;
+}
+/* حالت پیش‌فرض: دسکتاپ */
+.card-container.portrait {
+  height: 450px; /* ارتفاع بلندتر برای نمایش درست در کامپیوتر */
+}
+
+/* موبایل و تبلت */
+@media (max-width: 768px) {
+  .card-container.portrait {
+    aspect-ratio: 3 / 4; /* حفظ تناسب */
+    height: auto; /* به اندازه عکس */
+  }
+}
+
+/* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Gallery</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container"><br><br>
+    <h3 class="section-title">Moments and memories from Marwa Habibi’s journey</h3></div>
+  <div class="cards-wrapper">
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (557).png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+  <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+  <p style="color: #000000;"><strong>
+    The CEO of Sustainers Global Initiative praises Marwa Habibi for her technical skills, analytical thinking, and social commitment, highlighting her innovative work in solar energy solutions for underserved communities.
+  </p><br></strong>
+  <a href="https://drive.google.com/file/d/1XSAfXsjW2vJObs5c-pM4ccEDNVW02shd/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+  </a>
+</div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (556).png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>This heartfelt recommendation from Ms. Isabelle Zhu-Maguire honors Marwa’s literary brilliance and emotional depth. Her authentic voice brings the experiences of Afghan women to the world, reflecting a deep bond and trust in her power to inspire change through words and art.</strong></p><br>
+          <a href="https://drive.google.com/file/d/1ctEa0HzhwOHJef2-BaOBciHMTyt96bNx/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (614).png" alt="Recommendation Letter 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>This recommendation from the Founder of Women Ascension affirms Marwa Habibi’s intellectual depth, leadership, and impact as a global speaker. Her empathy, communication, and critical thinking make her a powerful advocate for sustainable development and a strong candidate for institutions fostering future leaders.</strong></p><br>
+          <a href="https://drive.google.com/file/d/1mPTikU83RjovW13Cs5Nrqkxj0jRnVrdP/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (555).png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>This recommendation highlights Marwa Habibi’s strong skills in coding, especially HTML and CSS, her creativity, teamwork, and leadership, making her a valuable and capable contributor to any organization.</strong></p><br>
+          <a href="https://drive.google.com/file/d/1Q7WBOvcHLkfk__kgn19_6tXZKUsXTmjt/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Marwa.jpg" alt="Recommendation Letter 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>Endorsed by English instructor Nargis Ebrahimi, Marwa exemplifies unwavering dedication, exceptional language skills, and outstanding leadership potential. With a global outlook and a passion for driving positive, sustainable change, Marwa is a valuable asset to any forward-thinking organization.</strong></p><br>
+          <a href="https://drive.google.com/file/d/15cnhYhLx_milKW23dCHWllHM1jdgcnsh/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (558).png" alt="Recommendation Letter 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>This recommendation from Aryana Mahmood praises Marwa Habibi’s rare blend of technical skill and creativity, highlighting her dedication and readiness to make a strong impact in any academic or cultural setting.</strong></p><br>
+        <a href="https://drive.google.com/file/d/1swKeyRw7sqDUyo2TgluiEYUUWL1yxPC3/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (736).png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recommendation Letter</strong></h4><br>
+          <p style="color: #000000;"><strong>Recommendation letter from Tamim Popal, founder of Book Organization, praising my skills in English communication, writing, and leadership during seven months of study and collaboration.</strong></p><br>
+          <a href="https://drive.google.com/file/d/1RxK9QTAmVaCyLyIchT9oPXwfZWVcqoNr/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Marwa Habibi3.png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Participation Certificate</strong></h4><br>
+          <p style="color: #000000;"><strong>Successfully participated in the Qualification Round of the IAAC 2025. Received a special honor for submitting a digitally written solution.</strong></p><br>
+          <a href="https://drive.google.com/file/d/16-mGRSutJlk_3YHCUUDNnVKOC0Kgvfrc/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- مثال ریکامندیشن لتر (پرتریت) -->
+    <div class="card-container portrait" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (734).png" alt="Recommendation Letter">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Achievement</strong></h4><br>
+          <p style="color: #000000;"><strong>Certificate of Achievement from the University of Leeds and Click Start for completing the "Introduction to Programming Using Python" course.</strong></p><br>
+          <a href="https://drive.google.com/file/d/10fwkpMwZWgitkL5Lu17XGOrEmJhR0g3l/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="33.png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Achievement</strong></h4>
+          <p style="color: #000000;">Certificate of Completion from United Leaders Global in partnership with the International Council on Human Rights, Peace and Politics, recognizing successful participation in Project Parwaaz.</p>
+        <a href="https://drive.google.com/file/d/1-K4csMHOr2yckJ4-Tp7-cZa62kgNFT29/view?usp=sharing" target="_blank">
+    <button style="padding: 8px 16px; background-color: #000000; color: white; border: none; border-radius: 4px; cursor: pointer;">
+     <strong>Open PDF</strong>
+    </button>
+     </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (733).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Recognition of Achievement</strong></h4>
+          <p style="color: #000000;">Completed the "Mexoxo Take the Lead" program by Cornell University, gaining skills in leadership, entrepreneurship, and digital marketing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (732).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate</strong></h4>
+          <p style="color: #000000;">Completed the “Sustainable Lifestyles” course by UNSSC and UNEP, gaining insights into sustainable living practices and SDG-related behavioral change.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (158).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Successfully completed the Engaging Safely at the UN online course (2.5 hours), offered by the United Nations System Staff College (UNSSC) in collaboration with the United Nations Youth Office.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Marwa Habibi4.png" alt="Certificate 1111">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Participation</strong></h4>
+          <p style="color: #000000;">Completed a certified course on sustainable and climate-resilient farming under the
+            EU-funded project “ICT Applications for Sustainable Environmental Protection”, in collaboration with NARC,
+            Islamabad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Marwa Habibi.png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Membership Certificate – Women Ascension</strong></h4>
+          <p style="color: #000000;">This certificate membership confirms my membership in Women Ascension, a global organization empowering women. It recognizes my commitment to advancing gender equality and positive social change.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (561).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Membership – Generation of Thinkers</strong></h4>
+          <p style="color: #000000;">Marwa Habibi is an active member of the Generation of Thinkers group, contributing to the development of critical skills and participating in social innovation projects.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="MarwaHabibi.png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Certificate of Completion in Mentorship for Enhancing Psychological Resilience and Promoting Hope and Motivation in Facing Life Challenges</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (143).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Completed a 7-hour online training on The Youth, Peace and Security Primer, delivered by the United Nations System Staff College (UNSSC) in collaboration with the Folke Bernadotte Academy (FBA).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (159).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Successfully completed the Military Peacekeeping-Intelligence online course offered by the United Nations System Staff College (UNSSC).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (615).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Digital Content Creation and Online Communication Certificate</strong></h4>
+          <p style="color: #000000;">Certified in creating engaging digital content and mastering effective communication across online platforms to connect and influence audiences.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (554).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion – English Writing Course (CBA)</strong></h4>
+          <p style="color: #000000;">Marwa Habibi completed the “Fundamental Level” of the Online English Writing course at CBA, showing strong commitment to improving her academic writing and communication skills.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (564).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4> <strong style="color: #000000;">Certificate of Completion – Sustainers</strong></h3>
+            <p style="color: #000000;">Completion of an online training on the cost and benefits of residential solar
+              energy, enhancing knowledge in sustainable energy solutions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (616).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion – HTML Intermediate Level</strong></h4>
+          <p style="color: #000000;">Presented to Marwa Habibi for demonstrating solid skills and successfully completing the Empower Afghan Girls Together (EAGT) Intermediate HTML course held between March 16 and May 23, 2025.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (141).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Successfully completed a 5-hour online training program delivered by the United Nations System Staff College (UNSSC) in collaboration with the Folke Bernadotte Academy (FBA).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (142).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Successfully completed a 9-hour online training focused on the fundamentals of peacekeeping intelligence, delivered by the UNSSC in partnership with the UN Peacekeeping Intelligence Academy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (565).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion – Python Programming Course</strong></h4>
+          <p style="color: #000000;">Awarded to Marwa Habibi for successfully completing the Python Programming Course by Generation of Thinkers (April 8–30, 2025), demonstrating practical skills and commitment to learning.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Marwa Habibi2.png" alt="Certificate 1111">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Completed a mentorship program on navigating cultural, legal, and social systems in host countries, with focus on education, healthcare, employment, housing, and empowering displaced youth and women.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Certificate of Marwa Habibi.jpg" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Marwa Habibi has successfully completed a four-month English language course at the Upper Intermediate level with effort and perseverance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (11).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4> <strong style="color: #000000;">Certificate of Appreciation</strong></h3>
+          <p style="color: #000000;">Awarded Certificate of Appreciation for exceptional creativity and contribution in the 2025 AMPLIFY Afghan Women Poetry Competition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (144).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Successfully completed an online training (2 hours) on the fundamentals of Peacekeeping-Intelligence, focusing on the core concepts and applications of PKI in UN peacekeeping operations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (145).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion</strong></h4>
+          <p style="color: #000000;">Completed 10-hour online orientation Peacekeeping-Intelligence, Surveillance, Reconnaissance (PKISR), intelligence processes, situational awareness, operational UN peacekeeping missions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (618).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Digital Content Creation & Online Collaboration – Cisco NetAcad | May
+              2025</strong></h4>
+          <p style="color: #000000;">Completed a course on content creation, communication, and collaboration online via
+            Cisco Networking Academy and Abaad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (14).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4> <strong style="color: #000000;">Professional Certificate</strong></h3>
+          <p style="color: #000000;">I have completed the Google Cybersecurity Professional Certificate, gaining key skills in network security, threat and vulnerability management, and working with Python, Linux, SQL, SIEM, and IDS tools.</p>
+        <a href="https://coursera.org/verify/professional-cert/JUSRWP9RNYRU" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (621).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Completion – HTML Beginner Level</strong></h4>
+          <p style="color: #000000;">Awarded to Marwa Habibi for successfully completing the HTML Beginner course with Empower Afghan Girls Together (EAGT), showcasing foundational programming skills from March 16 to May 23, 2025.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (13).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4> <strong style="color: #000000;">Professional Certificate</strong></h3>
+          <p style="color: #000000;">Completed the Google Project Management Professional Certificate, mastering key skills in initiating, planning, and executing traditional and agile projects.</p>
+        <a href="https://coursera.org/verify/professional-cert/X7JJB9H7MY52" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (12).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4> <strong style="color: #000000;">Specialization Certificate</strong></h3>
+          <p style="color: #000000;">Completed Data Science Foundations Specialization, gaining practical skills in Python programming, data analysis, clustering, and machine learning applied to real-world problems.</p>
+        <a href="https://coursera.org/verify/specialization/SBA0E7DAU2DF" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- مثال سرتیفیکت (لندسکیپ) -->
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (161).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">IELTS Listening and Speaking Sections Skills Mastery</strong></h4><br>
+    <a href="https://coursera.org/verify/LDJIRB99B7EC" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (163).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Media Relations and Crisis Management</strong></h4><br>
+    <a href="https://coursera.org/verify/AEX6BGWFMBQO" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (633).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Leadership Skills</strong></h4><br>
+    <a href="https://coursera.org/verify/A4MOMIOR3M3E" target="_blank" style="text-decoration:none;">
+      <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+            </button>
+           </a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (164).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Write Your First Novel</strong></h4><br>
+  <a href="https://coursera.org/verify/5OIZ0UMB6B7S" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (632).png" alt="Certificate">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Emotional Intelligence in Leadership</strong></h4><br>
+  <a href="https://coursera.org/verify/C3WYDF4VHDHW" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (630).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Science Communication</strong></h4><br>
+  <a href="https://coursera.org/verify/Y30GFJWILR5U" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (162).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">English for Career Development</strong></h4><br>
+  <a href="https://coursera.org/verify/H50C9ELRVDO8" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (629).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Teach English Now! Technology Enriched Teaching</strong></h4><br>
+  <a href="https://coursera.org/verify/PSZQTV4D4IBT" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (165).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Business English Networking</strong></h4><br>
+  <a href="https://coursera.org/verify/2Q44M2GZL1G9" target="_blank" style="text-decoration:none;">
+    <button style="padding:8px 15px; cursor:pointer; background-color:#B2CD9C; color:white; border:none; border-radius:5px;">
+      Verify Certificate
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="IMG_7052.JPG" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Appreciation</strong></h4>
+          <p style="color: #000000;">Marwa Habibi received a Certificate of Appreciation for her dedication and active
+            participation in the A1-level Turkish course, showcasing her passion for language learning and academic
+            excellence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (625).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Achievement</strong></h4>
+          <p style="color: #000000;">This exceptional certificate honors Marwa Habibi for her creative and insightful essay
+            on expanding educational opportunities for Afghan girls.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-container landscape" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Screenshot (617).png" alt="Certificate 1">
+        </div>
+        <div class="card-back">
+          <h4><strong style="color: #000000;">Certificate of Appreciation</strong></h4>
+          <p style="color: #000000;">This certificate recognizes outstanding analysis, creativity, and dedication to
+            advancing education for girls in Afghanistan.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <!-- <footer> -->
+    <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  // فقط یک بار اضافه کردن رویداد کافی‌ست
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // تابع برای فعال‌سازی کپشن‌ها یا دیگر آیتم‌ها
+  function toggleCaption(element) {
+    element.classList.toggle('active');
+  }
+</script>
+</body>
+</html>

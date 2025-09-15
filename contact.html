@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Marwa Habibi</title>
+  <script src="Java.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet" />
+  <style>
+   /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+main {
+  max-width: 700px;
+  margin: 40px auto;
+  background: rgb(255, 255, 255);
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(38,70,145,0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #6F826A;
+}
+input, textarea {
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #73946B;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+}
+
+/* Hidden class to hide the thank you message initially */
+ .fancy-form {
+      background: #000000;
+      backdrop-filter: blur(15px);
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      width: 650px;
+      color: #ffffff;
+    }
+
+    .fancy-form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .input-group {
+      position: relative;
+      color: #ffffff;
+      margin-bottom: 25px;
+      background-color: #000000;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 15px 15px 15px 15px;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 12px;
+      font-size: 16px;
+      color: #ffffff;
+      outline: none;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      resize: none;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder {
+      color: #ffffff;
+      transition: opacity 0.3s ease;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: #ffffde;
+      box-shadow: 0 0 8px #ffffde;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffffff;
+      font-size: 16px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label,
+    .input-group textarea:focus + label,
+    .input-group textarea:not(:placeholder-shown) + label {
+      top: -12px;
+      left: 10px;
+      font-size: 13px;
+      color: #000000;
+      background: #ffffff;
+      padding: 0 6px;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: #ffffff;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0b132b;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgb(255, 255, 255);
+      transition: background 0.4s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #f4f4f4;
+      transform: scale(1.05);
+    }
+  .hidden {
+    display: none !important;
+  }
+  
+  #thank-you-message {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  #thank-you-message h2 {
+    color: #8b0000;
+    font-size: 2rem;
+  }
+  .contact-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.contact-item i {
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  color: #ffffff;
+}
+.contact-item strong {
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+}
+.contact-item p {
+  margin: 0;
+  font-size: 0.9;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  main, .fancy-form {
+    width: 100%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+  }
+
+  .fancy-form h2 {
+    font-size: 22px;
+    color: #ffffff;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 12px;
+    font-size: 15px;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .input-group label {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label,
+  .input-group textarea:focus + label,
+  .input-group textarea:not(:placeholder-shown) + label {
+    font-size: 12px;
+    color: #000000;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #thank-you-message {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  #thank-you-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-item i {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-item strong {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+
+ /* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Contact</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+<br><br>
+  <main>
+    <form class="fancy-form" action="" method="post">
+    <h2>Contact Form</h2>
+
+    <div class="input-group">
+      <input type="text" id="name" name="name" placeholder=" " required />
+      <label for="name">Your Name</label>
+    </div>
+
+    <div class="input-group">
+      <input type="email" id="email" name="email" placeholder=" " required />
+      <label for="email">Your Email</label>
+    </div>
+
+    <div class="input-group">
+      <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+      <label for="message">Your Message</label>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+    <div id="thank-you-message" class="hidden" style="text-align:center; color:#B2CD9C; font-size: 35px; font-weight:bold;"><br>
+      Thank you for your message! I will read soon.<br><br>
+      <div class="contact-item" style="color: #000000; font-size: 1.5rem; text-align: center; align-items: center; justify-content: center;">
+    <i class="fas fa-map-marker-alt"></i>
+      <div style="color: #000000; font-size: 1.5rem; text-align: center; align-items: center; justify-content: center;">
+       <strong style="color: #000000; font-size: 1.5rem; text-align: center; align-items: center; justify-content: center;">Visit Me</strong>
+       <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location Icon" width="30">
+       <span style="color:#000000; font-size: 1.5rem; text-align: center; align-items: center; justify-content: center;">Mazar-e-Sharif</span>
+      </div>
+      </div><br>
+      <div style="text-align: center; margin-bottom: 30px;">
+      <!-- Use mailto: for email -->
+      <a href="mailto:marwahabibi789@gmail.com" title="Email">
+        <img src="icons8-email-24.png" alt="Email" width="34" />
+      </a>
+      <a href="https://www.linkedin.com/in/marwa-habibi-95940434b" target="_blank" title="LinkedIn">
+        <img src="icons8-linkedin-48.png" alt="LinkedIn" width="35" />
+      </a>
+      <a href="https://www.instagram.com/safahabibi111?igsh=ZXZseDJueDBuYXNw" target="_blank" title="Instagram">
+        <img src="icons8-instagram-48.png" alt="Instagram" width="35" />
+      </a>
+      <a href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" target="_blank" title="Medium">
+        <img src="icons8-medium-30.png" alt="Medium" width="35" />
+      </a>
+      <a href="https://github.com/MarwaHabibi" target="_blank" title="GitHub">
+        <img src="icons8-github-30.png" alt="GitHub" width="35" />
+      </a>
+      <a href="https://x.com/MarwaHabib48820" target="_blank" title="Twitter">
+        <img src="icons8-twitter-30.png" alt="Twitter" width="35" />
+      </a>
+    </div>
+    </div>
+  </main>
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  // منوی موبایل
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', function () {
+    navList.classList.toggle('show');
+  });
+
+  // فرم و ارسال ایمیل
+  emailjs.init("wMK0pWL_GUXgiGsGS");
+
+  const form = document.querySelector('.fancy-form');
+  const thankYouMessage = document.getElementById('thank-you-message');
+  const messageStatus = document.getElementById('message-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_95o5reu', 'template_jt9rvfe', this)
+      .then(function () {
+        thankYouMessage.classList.remove('hidden');  // نمایش پیام تشکر
+        form.style.display = 'none';                  // مخفی کردن فرم
+        messageStatus.textContent = 'پیام شما با موفقیت ارسال شد!';
+        messageStatus.style.color = 'green';
+        form.reset();
+      }, function (error) {
+        messageStatus.textContent = 'ارسال پیام با خطا مواجه شد. لطفاً دوباره تلاش کنید.';
+        messageStatus.style.color = 'red';
+      });
+  });
+});
+
+
+  </script>
+
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+
+</body>
+</html>

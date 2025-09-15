@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Marwa Habibi</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('habibi.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #73946B;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+/* کانتینر و بخش پروفایل */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  gap: auto;
+  padding: auto 20px;
+}
+
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #73946B;
+      padding-bottom: 5px;
+    }
+     /* شبکه کارت‌ها */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  /* کارت پروژه */
+  .project-card {
+    background: #f6ffef;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(11, 61, 145, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    /* انیمیشن اولیه */
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: transform, opacity;
+  }
+
+  /* وقتی کارت در صفحه دیده شود */
+  .project-card.visible {
+    animation: fadeScaleUp 0.8s forwards ease-out;
+  }
+
+  /* هاور جذاب */
+  .project-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 18px 40px var(--color-shadow);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  }
+
+  /* انیمیشن ورود کارت */
+  @keyframes fadeScaleUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.85) translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* تصویر پروژه */
+  .project-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--color-primary);
+    transition: transform 0.4s ease;
+  }
+  /* حرکت ملایم تصویر روی هاور کارت */
+  .project-card:hover .project-image {
+    transform: scale(1.1);
+  }
+
+  /* محتوای پروژه */
+  .project-content {
+    padding: 24px 22px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 480px) {
+  .project-content {
+    padding: 18px 15px;
+  }
+}
+
+  /* عنوان پروژه */
+  .project-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.8px;
+  }
+
+  /* توضیحات پروژه */
+  .project-description {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  /* لینک پروژه */
+  .project-link {
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .project-link a {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .project-link a:hover {
+    border-color: var(--color-primary);
+    text-decoration: none;
+  }
+  /* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo"><h1>Projects</h1></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container"><br><br>
+    <h2 class="section-title">Projects</h2>
+
+     <div class="projects-grid">
+    <article class="project-card">
+      <img class="project-image" src="download3.jpg" alt="Exploring Hidden Wonders" />
+      <div class="project-content">
+        <h3 class="project-title">MyBootChappal</h3>
+        <p class="project-description">An innovative online brand offering stylish, comfortable footwear with premium quality and fast nationwide delivery.</p>
+        <div class="project-link">
+          <a href="https://online-store-m2sx.onrender.com" target="_blank" rel="noopener noreferrer">Learn More &raquo;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <img class="project-image" src="download.jpg" alt="Afghan Heritage Store" />
+      <div class="project-content">
+        <h3 class="project-title">Study To Innovate</h3>
+        <p class="project-description">Empowering learners worldwide with passion and innovation.</p>
+        <div class="project-link">
+          <a href="https://platform-z5h8.onrender.com" target="_blank" rel="noopener noreferrer">Learn More &raquo;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <img class="project-image" src="Afghan.jpeg" alt="My Beautiful World" />
+      <div class="project-content">
+        <h3 class="project-title">Afghan Heritage Store</h3>
+        <p class="project-description">Traditional Clothing & Foods</p>
+        <div class="project-link">
+          <a href="https://marwahabibi.github.io/Afghan-Heritage-Store/" target="_blank" rel="noopener noreferrer">Learn More &raquo;</a>
+        </div>
+      </div>
+    </article>
+</div>
+  </div>
+  <footer>
+    &copy; 2025 Marwa Habibi. All rights reserved.
+  </footer>
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+   // انیمیشن ورود کارت‌ها به صورت پله‌ای
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 300); // هر کارت با 300 میلی‌ثانیه فاصله فعال می‌شود
+      });
+    });
+</script>
+</body>
+</html>

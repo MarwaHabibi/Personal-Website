@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Me - Marwa Habibi</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset CSS */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+        /* --- Header --- */
+        
+        .header {
+            position: relative;
+            height: 100vh;
+            background: url('habibi.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        /* Dark overlay */
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+        /* Inner content */
+        
+        .header .content {
+            position: relative;
+            max-width: 900px;
+            z-index: 2;
+        }
+        /* Title */
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        /* Paragraph */
+        
+        .header p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        /* Button */
+        
+        .header a.btn-primary {
+            padding: 12px 30px;
+            background: #6F826A;
+            color: white;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: #73946B;
+            transition: background-color 0.3s ease;
+        }
+        
+        .header a.btn-primary:hover {
+            animation: pulse 0.6s ease infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* --- Desktop view --- */
+        
+        @media (min-width: 768px) {
+            .header h1 {
+                font-size: 3rem;
+            }
+            .header p {
+                font-size: 1.5rem;
+            }
+            .header a.btn-primary {
+                font-size: 1.2rem;
+                padding: 14px 40px;
+            }
+        }
+        /* --- Navigation --- */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            font-weight: 600;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        
+        nav .logo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.4rem;
+            color: #000000;
+            cursor: pointer;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 10px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #6F826A;
+            border-bottom: 2px solid #B2CD9C;
+        }
+        
+        .container a.btn-primary {
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        /* کانتینر و بخش پروفایل */
+        
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .profile-section {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+            /* برای انیمیشن کل بخش */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+        /* انیمیشن تصویر */
+        
+        .profile-section img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(11, 61, 145, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomFadeIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+        /* انیمیشن بیوگرافی */
+        
+        .bio {
+            flex: 1;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #444;
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: fadeSlideRight 1s ease forwards;
+            animation-delay: 0.9s;
+        }
+        /* استایل عنوان */
+        
+        h2.section-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            color: #73946B;
+            display: inline-block;
+            padding-bottom: 3px;
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: fadeSlideRight 1s ease forwards;
+            animation-delay: 0.7s;
+        }
+        /* دکمه */
+        
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #343434;
+            box-shadow: 0 0 20px #353430;
+        }
+        /* انیمیشن ها */
+        
+        @keyframes zoomFadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeSlideRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .resume {
+            max-width: 100%;
+            /* یا مثلاً 1100px یا 90% */
+            width: 90%;
+            margin: 60px auto;
+            padding: 40px 50px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #6F826A, #6F826A, #6F826A);
+            box-shadow: 0 20px 50px #73946B;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            perspective: 1200px;
+        }
+        
+        @media (max-width: 600px) {
+            .resume {
+                width: 95%;
+                padding: 20px 15px;
+                /* کاهش padding برای فضای بیشتر */
+            }
+            .resume>h3 {
+                font-size: 2rem;
+            }
+            .resume-item h4 {
+                font-size: 1.2rem;
+            }
+            .resume-item p {
+                font-size: 1rem;
+            }
+        }
+        
+        .resume>h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 15px #B2CD9C;
+            animation: title3DslideFade 1.5s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+        }
+        
+        .resume-item {
+            background: #B6B09F;
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 12px 0 #B6B09F, inset 0 0 20px #4d9aff;
+            opacity: 0;
+            transform-style: preserve-3d;
+            transform-origin: center bottom;
+            transform: translateY(80px) rotateX(15deg) scale(0.85);
+            filter: drop-shadow(0 0 8px #2973ff);
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+            animation-duration: 1.2s;
+            cursor: default;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1.8px solid transparent;
+        }
+        /* آیکن‌ها انیمیشنی */
+        
+        .icon {
+            opacity: 0;
+            transform: scale(0.5) rotate(-30deg);
+            display: inline-block;
+            margin-right: 10px;
+            color: #cfdac6;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+        /* وقتی ظاهر می‌شه */
+        
+        .icon.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+        /* انیمیشن آیتم‌ها با تأخیر */
+        
+        .resume-item:nth-child(1) {
+            animation-name: fadeSlide3DNeonIn;
+            animation-delay: 0.5s;
+        }
+        
+        .resume-item:nth-child(2) {
+            animation-name: fadeSlide3DNeonIn;
+            animation-delay: 1.05s;
+        }
+        /* افکت Hover پیشرفته */
+        
+        .resume-item:hover {
+            box-shadow: 0 0 30px 8px #B2CD9C, inset 0 0 30px #ffffff, 0 15px 40px #ffffff;
+            transform: translateY(-20px) rotateX(0deg) scale(1.1);
+            border-color: #ffffff;
+            filter: drop-shadow(0 0 15px #B2CD9C);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* متن داخل آیتم‌ها */
+        
+        .resume-item h4 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px #ffffff;
+        }
+        
+        .resume-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #6F826A;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .resume-item p {
+            font-size: 1.05rem;
+            color: #948979;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        /* --- Resume Links --- */
+        
+        .resume-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .resume-links {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .resume-links a {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            background: #000000;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .resume-links a:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+        /* کلید فریم‌ها */
+        /* انیمیشن ورود با 3D و نئون */
+        
+        @keyframes fadeSlide3DNeonIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) rotateX(30deg) scale(0.9);
+                filter: drop-shadow(0 0 0 transparent);
+            }
+            70% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg) scale(1.05);
+                filter: drop-shadow(0 0 12px #73946B);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg) scale(1);
+                filter: drop-shadow(0 0 8px #73946B);
+            }
+        }
+        /* انیمیشن شناور و نورانی بعد از ورود */
+        
+        @keyframes float3DNeon {
+            0%,
+            100% {
+                transform: translateY(0) rotateX(0deg) scale(1);
+                filter: drop-shadow(0 0 8px #73946B);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(10deg) scale(1.03);
+                filter: drop-shadow(0 0 20px #B6B09F);
+            }
+        }
+        /* استایل پایه برای resume-item */
+        
+        .resume-item {
+            background: #ffffff;
+            /* رنگ تیره برای کنتراست نور */
+            color: #e0e7ff;
+            /* رنگ متن روشن */
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px #73946B44;
+            opacity: 0;
+            transform-style: preserve-3d;
+            animation: fadeSlide3DNeonIn 1.2s ease forwards;
+            animation-fill-mode: forwards;
+            will-change: transform, filter, opacity;
+            cursor: default;
+            transition: box-shadow 0.3s ease;
+        }
+        /* بعد از اتمام انیمیشن ورود */
+        
+        .resume-item.animation-complete {
+            animation: float3DNeon 6s ease-in-out infinite;
+            opacity: 1;
+            box-shadow: 0 0 15px #73946B88;
+            cursor: pointer;
+        }
+        /* یک افکت Hover جذاب */
+        
+        .resume-item.animation-complete:hover {
+            box-shadow: 0 0 30px #B6B09F, 0 0 40px #73946B;
+            transform: translateY(-8px) rotateX(15deg) scale(1.05);
+            filter: drop-shadow(0 0 25px #B6B09F);
+            transition: all 0.3s ease;
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            padding-left: 36px;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.6s ease;
+        }
+        
+        .skills-list li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .skills-list li .icon {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #efffe1;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            opacity: 0;
+            transform: scale(0.6) rotate(-20deg);
+        }
+        
+        .skills-list li.visible .icon {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        /* --- Footer --- */
+        
+        footer {
+            background: #6F826A;
+            color: #ffffff;
+            padding: 15px 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* --- Responsive --- */
+        
+        @media (max-width: 900px) {
+            #intro {
+                flex-direction: column;
+            }
+            .card-front img {
+                max-width: 90%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 15px;
+            }
+            header h1 {
+                font-size: 2.8rem;
+            }
+            header p {
+                font-size: 1.1rem;
+            }
+        }
+        /* --- Toggle --- */
+        /* Hide hamburger by default */
+        
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        /* On small screens */
+        
+        @media (max-width: 768px) {
+            nav ul {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                flex-direction: column;
+                background: #B2CD9C;
+                color: #ffffff;
+                position: absolute;
+                top: 60px;
+                /* زیر نوار ناوبری */
+                left: 0;
+                right: 0;
+                padding: 0;
+                /* حذف padding اولیه */
+                box-shadow: 0 2px 8px #ffffff;
+                transition: max-height 0.4s ease, opacity 0.4s ease;
+            }
+            nav ul.show {
+                max-height: 500px;
+                /* ارتفاع کافی برای نمایش منو */
+                opacity: 1;
+                padding: 10px 0;
+                /* وقتی بازه، padding رو اضافه کن */
+            }
+            #nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0%;
+                overflow: visible;
+            }
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .menu-toggle {
+                display: block;
+                /* Show hamburger */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <h1>About Me</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <!-- Hamburger icon -->
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="faq.html">Q&A</a></li>
+            </ul>
+        </div>
+    </nav><br>
+    <div class="container">
+        <section class="profile-section" id="about-bio"><br>
+            <img src="download.jpeg" alt="Marwa Habibi Photo" />
+            <div class="bio">
+                <h2 class="section-title">About Me</h2>
+                <p>In the heart of Afghanistan's history filled with crises and complexities, in a distant and forgotten city called Mazar-i-Sharif, I was born in a land where war and poverty loomed like a dark shadow over its people. In this land, dreams
+                    can hardly become reality, but from a young age I had learned that no force could divert me from my path. My home was in a street filled with dust and endless hustle, where the sounds of life could be heard. I remember those days when
+                    my mother and father always listened to my words with endless care and attention, even when their hearts were filled with endless worries. Our home was filled with love and warmth, but just as my family’s embrace was a refuge for me,
+                    outside of it was a world full of threat and crisis that was rapidly growing in the shadow of darkness.</p><br>
+                <a style="padding: 10px 20px; font-size: 1.2rem; background-color:#000000; font-family: 'Times New Roman', Times, serif; color: white;" href="https://medium.com/@marwahabibi789/about-me-b8216084be5f" class="btn-primary">Read More</a>
+            </div>
+        </section>
+
+        <section class="resume" id="resume-education">
+            <h3><i class="fas fa-graduation-cap icon" data-delay="0"></i> Education</h3>
+            <div class="resume-item">
+                <h4><i class="fas fa-school icon" data-delay="0.2"></i> Lisah Sheikh Mohammad Sadiq Shahab School</h4>
+                <span>High School Diploma (Expected)</span>
+                <p>I pursued my education at Lisah Sheikh Mohammad Sadiq Shahab School until the 8th grade. Unfortunately, due to the Taliban takeover in Afghanistan, I was unable to continue my formal schooling. Despite these challenges, I have continued
+                    to pursue learning through online courses and self-directed study.</p>
+            </div>
+            <div class="resume-item">
+                <h4><i class="fas fa-certificate icon" data-delay="0.4"></i> Online Courses & Certifications</h4>
+                <span>Various International Programs (2024-2025)</span>
+                <p>Completed multiple international online courses covering diverse topics in technology, development, and professional skills. Gained practical knowledge and earned certificates to enhance my expertise and career readiness.</p>
+            </div>
+        </section>
+
+        <section class="resume" id="resume-experience">
+            <h3><i class="fas fa-briefcase icon" data-delay="0"></i> Experience & Volunteer Work</h3>
+
+            <div class="resume-item">
+                <h4><i class="fas fa-handshake icon" data-delay="0.2"></i> Member, Generation of Thinkers</h4>
+                <span>2025 - Present</span>
+                <p>Actively contributing as a member of GOT by supporting initiatives that empower youth, promote innovation, and encourage community development. Engaged in leadership activities, creative projects, and outreach programs that inspire progress
+                    and drive meaningful change.</p>
+            </div>
+
+            <div class="resume-item">
+                <h4><i class="fas fa-users icon" data-delay="0.4"></i> Women Ascension - Public Speaker - Civil Rights and Social Action</h4>
+                <span>2025 - Present</span>
+                <p>As a Speaker at Women Ascension, a global nonprofit working in 90+ countries, I advocate for women's empowerment and sustainable development. I deliver impactful talks on gender equality, youth leadership, and SDGs, and actively engage
+                    in international dialogues that promote civil rights and social action.</p>
+            </div>
+        </section>
+
+        <section class="resume" id="resume-skills">
+            <h3><i class="fas fa-lightbulb icon"></i> Skills</h3>
+            <ul class="skills-list">
+                <li><i class="fas fa-hand-holding-heart icon"></i> Social Entrepreneurship & Advocacy</li>
+                <li><i class="fas fa-microphone icon"></i> Effective Communication & Public Speaking</li>
+                <li><i class="fas fa-language icon"></i> Multilingual Communication (Dari, English)</li>
+                <li><i class="fas fa-balance-scale icon"></i> Professional & Ethical Responsibility</li>
+                <li><i class="fas fa-laptop-code icon"></i> Digital Literacy (Office, Google, Collaboration)</li>
+                <li><i class="fas fa-dove icon"></i> Peacebuilding & Conflict Resolution</li>
+                <li><i class="fas fa-tasks icon"></i> Project Management & Strategic Planning</li>
+                <li><i class="fas fa-search icon"></i> Research & Data Analysis</li>
+                <li><i class="fas fa-users icon"></i> Leadership & Team Building</li>
+                <li><i class="fas fa-feather-alt icon"></i> Creative Writing & Poetry</li>
+                <li><i class="fas fa-code icon"></i> Frontend Development </li>
+            </ul>
+        </section>
+        <section>
+            <div class="resume-section">
+                <div class="resume-links">
+                    <a href="https://drive.google.com/file/d/1VCsy14wCE2OtlReHsEWz1FoXp0li_8vX/view?usp=sharing" target="_blank">View Resume (PDF)</a>
+                    <a href="https://drive.google.com/file/d/1EILB2eq90GsfyZecd93iqo5Q9Qs5XrdN/view?usp=sharing" target="_blank">View Motivation Letter (PDF)</a>
+                    <a href="https://drive.google.com/file/d/1WI-vtyMXLpnmzOXlU6rFoK5Dab5gXM-r/view?usp=sharing" target="_blank">View Cover Letter (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const resumeSection = document.querySelector('.resume');
+            const resumeItems = document.querySelectorAll('.resume-item');
+            const resumeTitle = document.querySelector('.resume > h3');
+
+            const resumeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        resumeSection.style.animationPlayState = 'running';
+                        resumeTitle.style.animationPlayState = 'running';
+                        resumeItems.forEach((item, index) => {
+                            item.style.animationPlayState = 'running';
+                            item.style.animationDelay = `${0.5 + index * 0.3}s`;
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            // ابتدا انیمیشن ها را pause کن
+            resumeSection.style.animationPlayState = 'paused';
+            resumeTitle.style.animationPlayState = 'paused';
+            resumeItems.forEach(item => item.style.animationPlayState = 'paused');
+
+            resumeObserver.observe(resumeSection);
+
+            document.querySelectorAll('.resume-item').forEach(item => {
+                item.addEventListener('animationend', (e) => {
+                    if (e.animationName === 'fadeSlide3DNeonIn') {
+                        item.classList.add('animation-complete');
+                    }
+                });
+            });
+
+            const icons = document.querySelectorAll('.icon');
+
+            const iconsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay * 1000);
+                        iconsObserver.unobserve(entry.target); // فقط یک‌بار
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            icons.forEach(icon => {
+                iconsObserver.observe(icon);
+            });
+
+            const skillItems = document.querySelectorAll('.skills-list li');
+
+            const skillsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            skillItems.forEach(item => {
+                skillsObserver.observe(item);
+            });
+        });
+    </script>
+    <footer>
+        &copy; 2025 Marwa Habibi. All rights reserved.
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="VWg1I2iStbY4HqO2SNJaCYdyT6qKswBUue8LvCqILCI" />
+<title>Marwa Habibi - Home</title>
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+  /* Reset CSS */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+/* --- Header --- */
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url('habibi.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Inner content */
+.header .content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Title */
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.header a.btn-primary {
+  padding: 12px 30px;
+  background: #6F826A;
+  color: white;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #73946B;
+  transition: background-color 0.3s ease;
+}
+
+.header a.btn-primary:hover {
+  animation: pulse 0.6s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Desktop view --- */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1.5rem;
+  }
+
+  .header a.btn-primary {
+    font-size: 1.2rem;
+    padding: 14px 40px;
+  }}
+
+  /* --- Navigation --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    font-weight: 600;
+  }
+
+  nav .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6F826A;
+    border-bottom: 2px solid #B2CD9C;
+  }
+
+  /* --- Sections --- */
+  section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #73946B;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #6F826A;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+  #intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cursive';
+}
+
+.intro-card {
+  background: rgb(185, 185, 185);
+  padding: 40px;
+  font-family: 'Cursive';
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+}
+
+.intro-card h2 {
+  margin-bottom: 20px;
+  color: #6F826A;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #6F826A;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+  /* --- Features Section --- */
+ #features {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.feature {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.feature:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #666;
+}
+  /* --- Projects Section --- */
+  /* بخش کلی پروژه‌ها */
+  #projects {
+  padding: 4rem 1rem;
+  background-color: #ffffff; /* بک‌گراند کلی سیاه */
+  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default; /* فقط کلیک روی کارت‌ها دست شود */
+}
+
+.project-card {
+  background-color: #000000; /* کارت‌ها سفید */
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.6s ease, opacity 0.6s ease;
+  transform: translateY(30px);
+  opacity: 0;
+  cursor: pointer; /* دست هنگام هاور */
+}
+
+.project-card:hover {
+  animation: cardBounceIn 0.6s ease forwards;
+  cursor: pointer; /* دست */
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@keyframes cardBounceIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.project-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.project-card img {
+  width: 100%;
+  max-width: 270px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.project-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.project-card a {
+  color: #B2CD9C;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* انیمیشن هنگام اسکرول */
+.animate.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+  /* --- Testimonials --- */
+   #testimonials-section {
+    padding: 60px 20px;
+    background: #eaf4ec;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+  }
+
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #1a3e2f;
+  }
+
+  .card:hover {
+    background-color: #cdeacc;
+    transform: translateY(-3px);
+  }
+
+  .testimonial-details {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #333;
+    display: none;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .testimonial-details.show {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* --- Contact Quick --- */
+#contact-quick {
+  background: #ffffff; /* سفید و ساده */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+#contact-quick h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#contact-quick p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.icons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px; /* فقط یک فاصله خیلی کوچک */
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.contact-icon img {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.contact-icon:hover img {
+  filter: grayscale(0%);
+}
+  /* --- Footer --- */
+  footer {
+    background: #6F826A;
+    color: #ffffff;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    #intro {
+      flex-direction: column;
+    }
+
+    .card-front img {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }}
+
+/* --- Toggle --- */
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+nav ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background: #B2CD9C;
+  color: #ffffff;
+  position: absolute;
+  top: 60px; /* زیر نوار ناوبری */
+  left: 0;
+  right: 0;
+  padding: 0; /* حذف padding اولیه */
+  box-shadow: 0 2px 8px #ffffff;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0%;
+  overflow: visible;
+}
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+}
+
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <div class="logo">Marwa Habibi</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+    <ul id="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">Q&A</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="header">
+  <div class="content"><br><br>
+    <h1 style="color: #ffffff; font-size: 2.5rem; font-family: 'Dancing Script';">Hi, I am Marwa Habibi</h1>
+    <p style="font-size: 1.5rem; font-family: 'Orbitron';">Computer Science <strong>University of the People</strong> | Frontend Developer | Cybersecurity Specialist | Project Manager </p>
+    <a style="font-size: 1rem; font-family: cursive; color: #eaf4ec;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
+  </div>
+</header>
+<!-- Intro Section -->
+ <section id="intro" style="font-family: 'Bebas Neue', cursive;">
+  <div class="intro-card" style="font-family: 'Bebas Neue', cursive;">
+    <p id="typed-text"></p>
+    <span class="cursor"></span>
+  </div>
+</section>
+
+
+<!-- Features Section -->
+<section id="features">
+  <div class="feature animate"> 
+    <h3>Frontend Developer</h3>
+    <p>Experienced in building frontend web applications with responsive frontend design and robust functionality. Skilled in HTML, CSS, JavaScript, React, Bootstrap.</p>
+  </div>
+  <div class="feature animate">
+    <h3>Cybersecurity Specialist</h3>
+    <p>Passionate about protecting digital systems. Experienced in understanding threats, vulnerabilities, and implementing secure practices. Completed courses in Cybersecurity, Detection & Response, and Automating Tasks with Python.</p>
+  </div>
+  <div class="feature animate">
+    <h3>Project Manager</h3>
+    <p>Skilled in planning, organizing, and executing projects efficiently. Experienced in leading teams, managing timelines, and ensuring successful project delivery.</p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <h2 style="color: black;">Call for Collaboration</h2>
+  <h5 style="justify-content: center; align-items: center; text-align: center; margin-bottom: 50px;"><strong>Seeking collaborative partners to bring these empowering initiatives for Afghan girls to life!</strong></h5>
+  <div class="projects-grid">
+    <div class="project-card animate">
+      <img src="Afghani paintings.jpg" height="280 alt="Project 3" />
+      <div class="content">
+        <h4>Artistic and Literary Empowerment for Afghan Girls</h4>
+        <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1nYU6cFzm_wul0zK5YuR_tj4YtRm03OK_/view?usp=sharing">Read More</a></button>
+      </div>
+    </div>
+    <div class="project-card animate">
+      <img src="Kabul 1969.jpg" height="280 alt="Project 2" />
+      <div class="content">
+        <h4>Pages of Empowerment Book Distribution for Afghan Girls</h4>
+        <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1TpJyYbtpu2MmplLsryv6ryrr-xK6zV8A/view?usp=sharing">Read More</a></button>
+      </div>
+    </div>
+    <div class="project-card animate">
+      <img src="🇦🇫.jpg" height="280 alt="Project 1" />
+      <div class="content">
+        <h4>Hope Beyond Walls Empowering Afghan Girls Inspiring Hope</h4>
+        <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1YY4TeBiqeOBDAMhf8p0A7K2XDkfaeAiy/view?usp=sharing">Read More</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials-section">
+  <h2 class="section-title">What People Say</h2>
+  <div class="testimonial-cards">
+    <div class="card" onclick="showTestimonial(0)">Isabelle Zhu-Maguire</div>
+    <div class="card" onclick="showTestimonial(1)">Aryana Mahmood</div>
+    <div class="card" onclick="showTestimonial(2)">Rohina Ghafori</div>
+    <div class="card" onclick="showTestimonial(3)">Maheen Amjad</div>
+    <div class="card" onclick="showTestimonial(4)">Nargis Ebrahimi</div>
+    <div class="card" onclick="showTestimonial(5)">Khatera Nazari</div>
+  </div>
+
+  <div class="testimonial-details" id="testimonial-display"></div>
+</section>
+
+<!-- Contact Quick Section -->
+<section id="contact-quick">
+  <h2>Get In Touch</h2>
+  <p>If you'd like to connect or collaborate, feel free to reach out.</p>
+  <div class="icons-wrapper">
+    <a style="text-decoration: none;" href="mailto:marwahabibi789@gmail.com" target="_blank" title="Email" class="contact-icon">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+    <a href="https://www.coursera.org/user/12e1a3a1202f1dd49e2c637d0c26a08d" target="_blank" title="Coursera" class="contact-icon"><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/images/71180874e10407031ecd7b62e27dec77.png?auto=format%2Ccompress&dpr=2&w=32&h=32" alt="Coursera"></a>
+
+    <a style="text-decoration: none;" href="https://www.linkedin.com/in/marwa-habibi-2818b4372/" target="_blank" title="LinkedIn" class="contact-icon">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://t.me/MarwaHabibi2025" target="_blank" title="LinkedIn" class="contact-icon">
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100085588758846&mibextid=ZbWKwL" target="_blank" title="LinkedIn" class="contact-icon">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://www.instagram.com/safahabibi111" target="_blank" title="Instagram" class="contact-icon">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://medium.com/@marwahabibi789" target="_blank" title="Medium" class="contact-icon">
+      <i class="fa-brands fa-medium"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://github.com/MarwaHabibi" target="_blank" title="GitHub" class="contact-icon">
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <a style="text-decoration: none;" href="https://x.com/MarwaHabib48820" target="_blank" title="Twitter" class="contact-icon">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Marwa Habibi. All rights reserved.</p>
+  <p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="faq.html">FAQ</a> |
+    <a href="contact.html">Contact</a>
+  </p>
+</footer>
+
+<script>
+  
+  const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const features = document.querySelectorAll('.feature');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        // اگر می‌خوای انیمیشن فقط یکبار اجرا بشه، آنبزر رو حذف کن
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  features.forEach(feature => {
+    observer.observe(feature);
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible"); // 🔁 این باعث میشه دفعه بعد دوباره انیمیشن اجرا شه
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll(".project-card").forEach(card => {
+      observer.observe(card);
+    });
+  });
+
+const testimonials = [
+    `"Marwa is clearly destined to do amazing things and you would be very lucky to have her on your team."
+     — Isabelle Zhu-Maguire, Co-founder, AMPLIFY Afghan Women`,
+
+    `"She is the kind of student who does not merely seek success for herself, but aims to be a voice and force for change in her community."
+     — Aryana Mahmood, PhD Candidate, ANU`,
+
+    `"Marwa is a natural leader with a problem-solving mindset, a proactive approach, and a deep commitment to social and environmental challenges."
+     — Rohina Ghafori, CEO of Sustainers Global Initiative`,
+
+    `"Marwa is not just a generation of change—she is the storm that shatters the world's silence and builds a future no one dared to imagine."
+     — Dr. Maheen Amjad, Founder & President, Women Ascension`,
+    `"Marwa is the spark that ignited tomorrow’s fire in the deep silence of night. Her name is a message to a world that can no longer turn its back on the truth."
+    — Nargis Ebrahimi, English Language Instructor, The Book | Tardid Academy`,
+    `"Her presence in any team or project guarantees unparalleled success and a brilliant future that every organization dreams to have."
+    — Khatera Nazari Instructor, Abaad: Afghan Women Forward`,
+  ];
+
+  function showTestimonial(index) {
+    const display = document.getElementById("testimonial-display");
+    display.innerHTML = testimonials[index];
+    display.classList.add("show");
+  }
+   document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("contact-quick").classList.add("show");
+  });
+  const text = "Marwa Habibi is an 15-year-old Afghan girl born in 2010 in the city of Mazar-e-Sharif, Balkh province, into a middle-class family. Her family was neither rich nor poor. Her Mother, always valued education and encouraged Marwa to learn and develop her individual skills.";
+const typedText = document.getElementById("typed-text");
+let charIndex = 0;
+
+function type() {
+  if (charIndex < text.length) {
+    typedText.textContent += text.charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 50);
+  } else {
+    setTimeout(erase, 2000);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typedText.textContent = text.substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 30);
+  } else {
+    setTimeout(type, 500);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => setTimeout(type, 500));
+
+</script>
+</body>
+</html>
