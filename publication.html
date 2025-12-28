@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy - Marwa Habibi</title>
+  <title>Blog - Marwa Habibi</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    /* Reset CSS */
+      /* Reset CSS */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -147,32 +147,69 @@
     border-bottom: 2px solid #B2CD9C;
   }
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  article.post {
+    background: white;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  /* انیمیشن تپیدن */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: #73946B;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      text-align: center;
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
-    h3 {
-      color: #B2CD9C;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-    }
-    p, ul {
-      margin-bottom: 18px;
-      font-size: 1rem;
-      color: #333;
-    }
-    ul {
-      padding-left: 20px;
-    }
-  /* --- Footer --- */
+  }
+
+  article.post:hover {
+    transform: scale(1.1) rotate(1deg);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    animation-play-state: paused; /* وقتی موس روی کارت استپ شود */
+  }
+
+  article.post h2 {
+    font-family: 'Playfair Display', serif;
+    color: #73946B;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+  article.post .date {
+    font-size: 0.9rem;
+    color: #97866A;
+    margin-bottom: 20px;
+  }
+  article.post p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #6F826A;
+  }
+  .read-more {
+    display: inline-block;
+    font-weight: 600;
+    color: #97866A;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .read-more:hover {
+    border-color: #B2CD9C;
+  }
+
+    /* --- Footer --- */
   footer {
     background: #6F826A;
     color: #ffffff;
@@ -221,7 +258,6 @@
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  user-select: none;
 }
 
 /* On small screens */
@@ -241,6 +277,12 @@ nav ul {
   box-shadow: 0 2px 8px #ffffff;
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
+
+nav ul.show {
+  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
+  opacity: 1;
+  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
+}
 #nav-menu {
   display: flex;
   flex-wrap: wrap;
@@ -248,12 +290,6 @@ nav ul {
   overflow: visible;
 }
 
-
-nav ul.show {
-  max-height: 500px; /* ارتفاع کافی برای نمایش منو */
-  opacity: 1;
-  padding: 10px 0; /* وقتی بازه، padding رو اضافه کن */
-}
 
   nav ul li {
     margin: 10px 0;
@@ -270,54 +306,45 @@ nav ul.show {
 <!-- Navigation -->
 <nav>
   <div class="container">
-    <div class="logo"><h1>Privacy</h1></div>
+    <div class="logo"><h1>Blog</h1></div>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
     <ul id="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Me</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="publication.html">Publication</a></li>
+      <li><a href="publication.html" class="active">Publication</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="articles.html">Articles</a></li>
-      <li><a href="privacy.html" class="active">Privacy</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
       <li><a href="faq.html">Q&A</a></li>
     </ul>
   </div>
 </nav>
 <br><br>
 <div class="container">
-  <h2>Your Privacy Matters</h2>
+  <article class="post">
+    <h2>Sunlight & Fire</h2>
+    <div class="date">April 2025</div>
+    <p>She was the girl who carried the sky upon her shoulders,
+      I was the same girl who carried the sky upon my shoulders.</p>
+    <a href="https://sites.google.com/view/amplifyafghans/sunlight-fire"
+      class="read-more" target="_blank">Read More &raquo;</a>
+  </article>
 
-  <p>Welcome to Marwa Habibi’s website. This Privacy Policy explains how we collect, use, and protect your personal information when you visit or interact with this website.</p>
+  <article class="post">
+    <h2>My story published on RP Deans blog</h2>
+    <div class="date">August 25, 2025</div>
+    <p>This blog features my poem and story, reflecting on the struggles and resilience of Afghan women under Taliban rule.</p>
+    <a href="https://rpdeans.blogspot.com/2025/08/a-woman-under-taliban-rule-voices-from.html" class="read-more" target="_blank">Read More &raquo;</a>
+  </article>
 
-  <h3>Information We Collect</h3>
-  <p>We may collect personal information such as your name, email address, and any messages you send via the contact form.</p>
-
-  <h3>How We Use Your Information</h3>
-  <ul>
-    <li>To respond to your inquiries and provide requested services.</li>
-    <li>To improve website functionality and user experience.</li>
-    <li>To send occasional updates or newsletters (only if you subscribe).</li>
-  </ul>
-
-  <h3>Cookies and Tracking</h3>
-  <p>This website does not use cookies or tracking technologies to collect personal information. We respect your privacy and aim to keep your browsing experience safe and anonymous.</p>
-
-  <h3>Third-Party Services</h3>
-  <p>We do not share your personal information with third parties, except when required by law or for essential services such as hosting providers.</p>
-
-  <h3>Data Security</h3>
-  <p>We implement reasonable security measures to protect your personal information from unauthorized access or disclosure.</p>
-
-  <h3>Your Rights</h3>
-  <p>You have the right to access, correct, or delete your personal data held by us. If you wish to exercise these rights, please contact us via the Contact page.</p>
-
-  <h3>Changes to This Policy</h3>
-  <p>We may update this Privacy Policy from time to time. The latest version will always be available on this page.</p>
-
-  <h3>Contact Us</h3>
-  <p>If you have any questions or concerns about this Privacy Policy, please reach out via email <a href="https:marwahabibi789@gmail.com">marwahabibi789@gmail.com</a>.</p>
+  <article class="post">
+    <h2>Poetry of Resistance – Bold Her Voice</h2>
+    <div class="date">August 2025</div>
+    <p>A special feature highlighting the resilience and creativity of Afghan women through poetry. This initiative amplifies voices of strength and resistance, giving women a platform to share their lived experiences and hopes for the future.</p>
+    <a href="https://www.linkedin.com/posts/bold-her-voice_boldhervoice-afghanwomen-poetryofresistance-activity-7366843079615553537-uUYt?utm_source=share&utm_medium=member_android&rcm=ACoAAE_fTrsBN_ntMW3lsMOA3RTENdUCNYYtAsk" class="read-more" target="_blank">Read More &raquo;</a>
+    </article>
 </div>
 <script>
   const menuToggle = document.getElementById('menu-toggle');
@@ -326,9 +353,21 @@ nav ul.show {
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show');
   });
+  gsap.to(".post", {
+    y: -15,
+    rotationX: 3,
+    rotationY: 3,
+    boxShadow: "0 0 30px #73946B",
+    duration: 3,
+    yoyo: true,
+    repeat: -1,
+    ease: "power1.inOut",
+    stagger: 0.5
+  });
 </script>
-<footer>
+<footer style="background:#6F826A; color:#fff; text-align:center; padding:20px;">
   &copy; 2025 Marwa Habibi. All rights reserved.
 </footer>
+
 </body>
 </html>

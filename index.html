@@ -26,16 +26,13 @@
 /* --- Header --- */
 .header {
   position: relative;
-  height: 100vh;
-  background-image: url('habibi.jpeg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 70vh;
+  background: #eaf4ec;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: #1a1a1a;
   padding: 0 20px;
   flex-direction: column;
   overflow: hidden;
@@ -46,7 +43,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.55);
+  background: #eaf4ec;
   z-index: 1;
 }
 
@@ -59,6 +56,7 @@
 
 /* Title */
 .header h1 {
+  color: #1a1a1a;
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;
@@ -67,6 +65,7 @@
 
 /* Paragraph */
 .header p {
+  color: #1a1a1a;
   font-size: 1.2rem;
   margin-bottom: 25px;
   letter-spacing: 1px;
@@ -189,7 +188,7 @@
 }
 
 .intro-card {
-  background: rgb(185, 185, 185);
+  background: black;
   padding: 40px;
   font-family: 'Cursive';
   border-radius: 20px;
@@ -200,7 +199,7 @@
 
 .intro-card h2 {
   margin-bottom: 20px;
-  color: #6F826A;
+  color: white;
 }
 
 .cursor {
@@ -584,7 +583,7 @@ nav ul.show {
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About Me</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="publication.html">Publication</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="articles.html">Articles</a></li>
@@ -597,15 +596,15 @@ nav ul.show {
 <!-- Header -->
 <header class="header">
   <div class="content"><br><br>
-    <h1 style="color: #ffffff; font-size: 2.5rem; font-family: 'Dancing Script';">Hi, I am Marwa Habibi</h1>
+    <h1 style="color: #1a1a1a; font-size: 2.5rem; font-family: 'Dancing Script';">Hi, I am Marwa Habibi</h1>
     <p style="font-size: 1.5rem; font-family: 'Orbitron';">Computer Science <strong>University of the People</strong> | Frontend Developer | Cybersecurity Specialist | Project Manager </p>
-    <a style="font-size: 1rem; font-family: cursive; color: #eaf4ec;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
+    <a style="font-size: 1rem; font-family: cursive; color: white;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
   </div>
 </header>
 <!-- Intro Section -->
  <section id="intro" style="font-family: 'Bebas Neue', cursive;">
   <div class="intro-card" style="font-family: 'Bebas Neue', cursive;">
-    <p id="typed-text"></p>
+    <p id="typed-text" style="color: white;"></p>
     <span class="cursor"></span>
   </div>
 </section>
@@ -660,12 +659,15 @@ nav ul.show {
 <section id="testimonials-section">
   <h2 class="section-title">What People Say</h2>
   <div class="testimonial-cards">
-    <div class="card" onclick="showTestimonial(0)">Isabelle Zhu-Maguire</div>
-    <div class="card" onclick="showTestimonial(1)">Aryana Mahmood</div>
-    <div class="card" onclick="showTestimonial(2)">Rohina Ghafori</div>
-    <div class="card" onclick="showTestimonial(3)">Maheen Amjad</div>
-    <div class="card" onclick="showTestimonial(4)">Nargis Ebrahimi</div>
-    <div class="card" onclick="showTestimonial(5)">Khatera Nazari</div>
+    <div class="card" onclick="showTestimonial(0)">Pashtana Zalmai Khan Durrani</div>
+    <div class="card" onclick="showTestimonial(1)">Sara Rahmani</div>
+    <div class="card" onclick="showTestimonial(2)">Parasto Hakim</div>
+    <div class="card" onclick="showTestimonial(4)">Hamayun Khan</div>
+    <div class="card" onclick="showTestimonial(3)">Aziza Akrami</div>
+    <div class="card" onclick="showTestimonial(5)">Rashid Mukhtari</div>
+    <div class="card" onclick="showTestimonial(6)">Fatima Wojohat</div>
+    <div class="card" onclick="showTestimonial(7)">Maria Mehraban</div>
+    <div class="card" onclick="showTestimonial(8)">Isabelle Zhu-Maguire</div>
   </div>
 
   <div class="testimonial-details" id="testimonial-display"></div>
@@ -679,15 +681,15 @@ nav ul.show {
     <a style="text-decoration: none;" href="mailto:marwahabibi789@gmail.com" target="_blank" title="Email" class="contact-icon">
       <i class="fa-solid fa-envelope"></i>
     </a>
-    <a href="https://www.coursera.org/user/12e1a3a1202f1dd49e2c637d0c26a08d" target="_blank" title="Coursera" class="contact-icon"><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/images/71180874e10407031ecd7b62e27dec77.png?auto=format%2Ccompress&dpr=2&w=32&h=32" alt="Coursera"></a>
+    <a href="https://www.coursera.org/user/12e1a3a1202f1dd49e2c637d0c26a08d" target="_blank" title="Coursera" class="contact-icon" ><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/images/71180874e10407031ecd7b62e27dec77.png?auto=format%2Ccompress&dpr=2&w=32&h=32" alt="Coursera"></a>
 
     <a style="text-decoration: none;" href="https://www.linkedin.com/in/marwa-habibi-2818b4372/" target="_blank" title="LinkedIn" class="contact-icon">
       <i class="fa-brands fa-linkedin"></i>
     </a>
-    <a style="text-decoration: none;" href="https://t.me/MarwaHabibi2025" target="_blank" title="LinkedIn" class="contact-icon">
+    <a style="text-decoration: none;" href="https://t.me/MarwaHabibi2025" target="_blank" title="Telegram" class="contact-icon">
       <i class="fa-brands fa-telegram"></i>
     </a>
-    <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100085588758846&mibextid=ZbWKwL" target="_blank" title="LinkedIn" class="contact-icon">
+    <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100085588758846&mibextid=ZbWKwL" target="_blank" title="Facebook" class="contact-icon">
       <i class="fa-brands fa-facebook"></i>
     </a>
     <a style="text-decoration: none;" href="https://www.instagram.com/safahabibi111" target="_blank" title="Instagram" class="contact-icon">
@@ -763,20 +765,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const testimonials = [
     `"Marwa is clearly destined to do amazing things and you would be very lucky to have her on your team."
-     — Isabelle Zhu-Maguire, Co-founder, AMPLIFY Afghan Women`,
+    — Pashtana Zalmai Khan Durrani, Founder of LEARN Afghanistan, Advocate for Afghan girls’ education`,
+
+    `"Marwa is the spark that ignited tomorrow’s fire in the deep silence of night. Her name is a message to a world that can no longer turn its back on the truth."
+    — Sara Rahmani, International Journalist, Media Producer & Moderator at Persian Awards`,
+
+    `"Marwa is not just a generation of change she is the storm that shatters the world's silence and builds a future no one dared to imagine."
+    — Parasto Hakim, Founder & CEO of SRAKAF Afghanistan, Educator and Human Rights Defender`,
+
+    `"Her presence in any team or project guarantees unparalleled success and a brilliant future that every organization dreams to have."
+    — Hamayun Khan, Founder & President of SOLA Teach, Award-Winning Author`,
+
+    `"Marwa represents the future of Afghan leadership—bold, intelligent, and fearless in her pursuit of justice and opportunity for girls."
+    — Aziza Akrami, Afghan Youth Representative to the United Nations 2025, Social Entrepreneur & Advocate for Women’s Rights & Education`,
+
+    `"Marwa is a rare talent whose dedication and leadership elevate every project she becomes part of."
+    — Rashid Mukhtari, Founder & CEO of Sepedaar Foundation`,
+
+    `"Marwa is a dreamer who transforms hope into action and inspires a generation to believe in the impossible."
+    — Fatima Wojohat, Artist & Cultural Activist`,
+
+    `"Marwa is not only a powerful voice of her generation; she is a storyteller of truth, resilience, and the future of Afghanistan."
+    — Maria Mehraban, Poet & Author`,
 
     `"She is the kind of student who does not merely seek success for herself, but aims to be a voice and force for change in her community."
-     — Aryana Mahmood, PhD Candidate, ANU`,
-
-    `"Marwa is a natural leader with a problem-solving mindset, a proactive approach, and a deep commitment to social and environmental challenges."
-     — Rohina Ghafori, CEO of Sustainers Global Initiative`,
-
-    `"Marwa is not just a generation of change—she is the storm that shatters the world's silence and builds a future no one dared to imagine."
-     — Dr. Maheen Amjad, Founder & President, Women Ascension`,
-    `"Marwa is the spark that ignited tomorrow’s fire in the deep silence of night. Her name is a message to a world that can no longer turn its back on the truth."
-    — Nargis Ebrahimi, English Language Instructor, The Book | Tardid Academy`,
-    `"Her presence in any team or project guarantees unparalleled success and a brilliant future that every organization dreams to have."
-    — Khatera Nazari Instructor, Abaad: Afghan Women Forward`,
+    — Isabelle Zhu-Maguire, Founder of AMPLIFY Afghan Women, Phd Candidate at ANU`,
   ];
 
   function showTestimonial(index) {
@@ -787,7 +800,7 @@ const testimonials = [
    document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contact-quick").classList.add("show");
   });
-  const text = "Marwa Habibi is an 15-year-old Afghan girl born in 2010 in the city of Mazar-e-Sharif, Balkh province, into a middle-class family. Her family was neither rich nor poor. Her Mother, always valued education and encouraged Marwa to learn and develop her individual skills.";
+const text = "Marwa Habibi is an 15-year-old Afghan girl born in 2010 in the city of Mazar-e-Sharif, Balkh province, into a middle-class family. Her family was neither rich nor poor. Her Mother, always valued education and encouraged Marwa to learn and develop her individual skills.";
 const typedText = document.getElementById("typed-text");
 let charIndex = 0;
 
