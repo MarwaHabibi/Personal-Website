@@ -205,7 +205,7 @@
             flex: 1;
             font-size: 1rem;
             font-weight: 400;
-            color: #444;
+            color: #000000;
             opacity: 0;
             transform: translateX(-40px);
             animation: fadeSlideRight 1s ease forwards;
@@ -254,135 +254,45 @@
             }
         }
         
-        .resume {
-            max-width: 100%;
-            /* یا مثلاً 1100px یا 90% */
-            width: 90%;
-            margin: 60px auto;
-            padding: 40px 50px;
-            border-radius: 25px;
-            background: linear-gradient(135deg, #6F826A, #6F826A, #6F826A);
-            box-shadow: 0 20px 50px #73946B;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            perspective: 1200px;
-        }
+        /* بخش رزومه بدون پس‌زمینه و بدون انیمیشن */
+.resume {
+    max-width: 100%;
+    width: 90%;
+    border-radius: 0; /* بدون گردی */
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: none; /* هیچ پس‌زمینه‌ای */
+}
+
+.resume-item {
+    border-radius: 0; /* بدون گردی */
+    padding: 20px 0;
+    opacity: 1; /* حتما دیده شود */
+    cursor: default;
+    animation: none; /* انیمیشن حذف شد */
+}
+
+.icon {
+    opacity: 1; /* آیکن‌ها دیده شوند */
+}     
         
-        @media (max-width: 600px) {
-            .resume {
-                width: 95%;
-                padding: 20px 15px;
-                /* کاهش padding برای فضای بیشتر */
-            }
-            .resume>h3 {
-                font-size: 2rem;
-            }
-            .resume-item h4 {
-                font-size: 1.2rem;
-            }
-            .resume-item p {
-                font-size: 1rem;
-            }
-        }
-        
-        .resume>h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            text-align: center;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-shadow: 0 0 15px #B2CD9C;
-            animation: title3DslideFade 1.5s cubic-bezier(0.6, 0, 0.2, 1) forwards;
-        }
-        
-        .resume-item {
-            background: #B6B09F;
-            border-radius: 20px;
-            padding: 30px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 12px 0 #B6B09F, inset 0 0 20px #4d9aff;
-            opacity: 0;
-            transform-style: preserve-3d;
-            transform-origin: center bottom;
-            transform: translateY(80px) rotateX(15deg) scale(0.85);
-            filter: drop-shadow(0 0 8px #2973ff);
-            animation-fill-mode: forwards;
-            animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
-            animation-duration: 1.2s;
-            cursor: default;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1.8px solid transparent;
-        }
-        /* آیکن‌ها انیمیشنی */
-        
-        .icon {
-            opacity: 0;
-            transform: scale(0.5) rotate(-30deg);
-            display: inline-block;
-            margin-right: 10px;
-            color: #cfdac6;
-            transition: transform 0.8s ease, opacity 0.8s ease;
-        }
-        /* وقتی ظاهر می‌شه */
-        
-        .icon.visible {
-            opacity: 1;
-            transform: scale(1) rotate(0);
-        }
-        /* انیمیشن آیتم‌ها با تأخیر */
-        
-        .resume-item:nth-child(1) {
-            animation-name: fadeSlide3DNeonIn;
-            animation-delay: 0.5s;
-        }
-        
-        .resume-item:nth-child(2) {
-            animation-name: fadeSlide3DNeonIn;
-            animation-delay: 1.05s;
-        }
-        /* افکت Hover پیشرفته */
-        
-        .resume-item:hover {
-            box-shadow: 0 0 30px 8px #B2CD9C, inset 0 0 30px #ffffff, 0 15px 40px #ffffff;
-            transform: translateY(-20px) rotateX(0deg) scale(1.1);
-            border-color: #ffffff;
-            filter: drop-shadow(0 0 15px #B2CD9C);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        /* متن داخل آیتم‌ها */
-        
-        .resume-item h4 {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 12px;
-            text-shadow: 0 0 8px #ffffff;
-        }
-        
-        .resume-item span {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #6F826A;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .resume-item p {
-            font-size: 1.05rem;
-            color: #948979;
-            line-height: 1.6;
-            font-weight: 500;
-        }
+.resume>h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+}
+
+.resume-item h4, .resume-item span, .resume-item p {
+    color: black;
+}
+
         /* --- Resume Links --- */
         
         .resume-section {
             max-width: 900px;
-            margin: auto;
             padding: 20px;
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
+            color: black;
             border-radius: 8px;
         }
         
@@ -404,7 +314,6 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
-            transition: background 0.3s ease;
         }
         
         .resume-links a:hover {
@@ -423,63 +332,27 @@
             70% {
                 opacity: 1;
                 transform: translateY(0) rotateX(0deg) scale(1.05);
-                filter: drop-shadow(0 0 12px #73946B);
+                filter: drop-shadow(0 0 12px #ffffff);
             }
             100% {
                 opacity: 1;
                 transform: translateY(0) rotateX(0deg) scale(1);
-                filter: drop-shadow(0 0 8px #73946B);
+                filter: drop-shadow(0 0 8px #ffffff);
             }
         }
-        /* انیمیشن شناور و نورانی بعد از ورود */
         
-        @keyframes float3DNeon {
-            0%,
-            100% {
-                transform: translateY(0) rotateX(0deg) scale(1);
-                filter: drop-shadow(0 0 8px #73946B);
-            }
-            50% {
-                transform: translateY(-10px) rotateX(10deg) scale(1.03);
-                filter: drop-shadow(0 0 20px #B6B09F);
-            }
-        }
-        /* استایل پایه برای resume-item */
-        
+              
         .resume-item {
-            background: #ffffff;
-            /* رنگ تیره برای کنتراست نور */
-            color: #e0e7ff;
-            /* رنگ متن روشن */
+            color: black;
             border-radius: 15px;
             padding: 20px 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 10px #73946B44;
             opacity: 0;
             transform-style: preserve-3d;
             animation: fadeSlide3DNeonIn 1.2s ease forwards;
             animation-fill-mode: forwards;
             will-change: transform, filter, opacity;
             cursor: default;
-            transition: box-shadow 0.3s ease;
         }
-        /* بعد از اتمام انیمیشن ورود */
-        
-        .resume-item.animation-complete {
-            animation: float3DNeon 6s ease-in-out infinite;
-            opacity: 1;
-            box-shadow: 0 0 15px #73946B88;
-            cursor: pointer;
-        }
-        /* یک افکت Hover جذاب */
-        
-        .resume-item.animation-complete:hover {
-            box-shadow: 0 0 30px #B6B09F, 0 0 40px #73946B;
-            transform: translateY(-8px) rotateX(15deg) scale(1.05);
-            filter: drop-shadow(0 0 25px #B6B09F);
-            transition: all 0.3s ease;
-        }
-        
         .skills-list {
             list-style: none;
             padding: 0;
@@ -634,14 +507,12 @@
     </nav><br>
     <div class="container">
         <section class="profile-section" id="about-bio"><br>
-            <img src="download.jpeg" alt="Marwa Habibi Photo" />
-            <div class="bio">
-                <h2 class="section-title">About Me</h2>
-                <p>In the heart of Afghanistan's history filled with crises and complexities, in a distant and forgotten city called Mazar-i-Sharif, I was born in a land where war and poverty loomed like a dark shadow over its people. In this land, dreams
-                    can hardly become reality, but from a young age I had learned that no force could divert me from my path. My home was in a street filled with dust and endless hustle, where the sounds of life could be heard. I remember those days when
-                    my mother and father always listened to my words with endless care and attention, even when their hearts were filled with endless worries. Our home was filled with love and warmth, but just as my family’s embrace was a refuge for me,
-                    outside of it was a world full of threat and crisis that was rapidly growing in the shadow of darkness.</p><br>
-                <a style="padding: 10px 20px; font-size: 1.2rem; background-color:#000000; font-family: 'Times New Roman', Times, serif; color: white;" href="https://medium.com/@marwahabibi789/about-me-b8216084be5f" class="btn-primary">Read More</a>
+            <img src="download.jpeg" alt="Marwa Habibi" style="margin-top: 50px;" />
+            <div class="bio" style="margin-top: 70px;">
+                <p>Marwa Habibi is an 15-year-old Afghan girl born in 2010 in the city of Mazar-e-Sharif, Balkh province, into a middle-class family. 
+                    <p>Marwa aspires to become Afghanistan’s representative at the United Nations and to establish herself as a renowned writer.</p>
+                    Through her continuous efforts and activism, she is determined to make a positive impact on society and the world.</p>
+                    <p>From a young age, Marwa developed a deep love for books and was passionate about studying and conducting research. Despite facing financial and family challenges, Marwa’s strong enthusiasm for reading and learning never wavered, and each year, she advanced with greater passion and talent.</p><br>
             </div>
         </section>
 

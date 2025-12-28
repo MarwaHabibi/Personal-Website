@@ -601,13 +601,6 @@ nav ul.show {
     <a style="font-size: 1rem; font-family: cursive; color: white;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
   </div>
 </header>
-<!-- Intro Section -->
- <section id="intro" style="font-family: 'Bebas Neue', cursive;">
-  <div class="intro-card" style="font-family: 'Bebas Neue', cursive;">
-    <p id="typed-text" style="color: white;"></p>
-    <span class="cursor"></span>
-  </div>
-</section>
 
 
 <!-- Features Section -->
@@ -800,9 +793,6 @@ const testimonials = [
    document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contact-quick").classList.add("show");
   });
-const text = "Marwa Habibi is an 15-year-old Afghan girl born in 2010 in the city of Mazar-e-Sharif, Balkh province, into a middle-class family. Her family was neither rich nor poor. Her Mother, always valued education and encouraged Marwa to learn and develop her individual skills.";
-const typedText = document.getElementById("typed-text");
-let charIndex = 0;
 
 function type() {
   if (charIndex < text.length) {
