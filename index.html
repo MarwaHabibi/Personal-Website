@@ -27,7 +27,7 @@
 .header {
   position: relative;
   height: 70vh;
-  background: #eaf4ec;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #eaf4ec;
+  background: white;
   z-index: 1;
 }
 
@@ -74,13 +74,13 @@
 /* Button */
 .header a.btn-primary {
   padding: 12px 30px;
-  background: #6F826A;
+  background: #eaf4ec;
   color: white;
   border-radius: 50px;
   font-size: 1rem;
   text-decoration: none;
   font-weight: 600;
-  color: #73946B;
+  color: black;
   transition: background-color 0.3s ease;
 }
 
@@ -225,7 +225,7 @@
 }
 
 .feature {
-  background: #ffffff;
+  background: white;
   border-radius: 15px;
   padding: 30px 25px;
   width: 280px;
@@ -269,7 +269,7 @@
 }
 
 .project-card {
-  background-color: #000000; /* کارت‌ها سفید */
+  background-color: #eaf4ec; /* کارت‌ها سفید */
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -594,11 +594,11 @@ nav ul.show {
 </nav>
 
 <!-- Header -->
-<header class="header">
-  <div class="content"><br><br>
-    <h1 style="color: #1a1a1a; font-size: 2.5rem; font-family: 'Dancing Script';">Founder of Women Family Empower</h1>
-    <p style="font-size: 1.5rem; font-family: 'Orbitron';">Advocate for Afghan Girls’ Education</p><br>
-    <a style="font-size: 0.9rem; font-family: cursive; height: 50; width: 50; color: white;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
+<header class="header" style="background-color: white;">
+  <div class="content" style="background-color: white;"><br><br>
+    <h1 style="color: #1a1a1a; font-size: 2.5rem; font-family: 'Dancing Script';">Frontend & Mobile Developer</h1>
+    <p style="font-size: 1.5rem; font-family: 'Orbitron';">Create Modearn and Responsive Webite with React & Build Mobile App with Flutter</p><br>
+    <a style="font-size: 0.9rem; font-family: cursive; height: 50; width: 50; color: black;" href="https://medium.com/@marwahabibi789/empowering-afghan-girls-my-journey-in-writing-research-leadership-880b10204969" class="btn-primary" style="color: #ffffff;">Learn More About Me</a>
   </div>
 </header>
 
@@ -627,21 +627,21 @@ nav ul.show {
     <div class="project-card animate">
       <img src="Afghani paintings.jpg" height="280 alt="Project 3" />
       <div class="content">
-        <h4>Artistic and Literary Empowerment for Afghan Girls</h4>
+        <h4 style="color: black;">Artistic and Literary Empowerment for Afghan Girls</h4>
         <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1nYU6cFzm_wul0zK5YuR_tj4YtRm03OK_/view?usp=sharing">Read More</a></button>
       </div>
     </div>
     <div class="project-card animate">
       <img src="Kabul 1969.jpg" height="280 alt="Project 2" />
       <div class="content">
-        <h4>Pages of Empowerment Book Distribution for Afghan Girls</h4>
+        <h4 style="color: black;">Pages of Empowerment Book Distribution for Afghan Girls</h4>
         <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1TpJyYbtpu2MmplLsryv6ryrr-xK6zV8A/view?usp=sharing">Read More</a></button>
       </div>
     </div>
     <div class="project-card animate">
       <img src="🇦🇫.jpg" height="280 alt="Project 1" />
       <div class="content">
-        <h4>Hope Beyond Walls Empowering Afghan Girls Inspiring Hope</h4>
+        <h4 style="color: black;">Hope Beyond Walls Empowering Afghan Girls Inspiring Hope</h4>
         <button type="button" class="btn btn-light"><a style="text-decoration: none; color: black;" target="_blank" href="https://drive.google.com/file/d/1YY4TeBiqeOBDAMhf8p0A7K2XDkfaeAiy/view?usp=sharing">Read More</a></button>
       </div>
     </div>
@@ -793,7 +793,6 @@ const testimonials = [
    document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contact-quick").classList.add("show");
   });
-
 function type() {
   if (charIndex < text.length) {
     typedText.textContent += text.charAt(charIndex);
@@ -803,7 +802,6 @@ function type() {
     setTimeout(erase, 2000);
   }
 }
-
 function erase() {
   if (charIndex > 0) {
     typedText.textContent = text.substring(0, charIndex - 1);
@@ -813,9 +811,7 @@ function erase() {
     setTimeout(type, 500);
   }
 }
-
 document.addEventListener("DOMContentLoaded", () => setTimeout(type, 500));
-
 </script>
 </body>
 </html>
